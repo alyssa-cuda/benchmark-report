@@ -45,26 +45,8 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font); background: var(--z-white); color: var(--z-dark); overflow-x: hidden; cursor: none; }
+body { font-family: var(--font); background: var(--z-white); color: var(--z-dark); overflow-x: hidden; }
 
-/* ── CURSOR ──────────────────────────────────────────── */
-.cursor {
-  position: fixed; width: 10px; height: 10px;
-  background: var(--z-green); border-radius: 50%;
-  pointer-events: none; z-index: 9999;
-  transform: translate(-50%,-50%);
-  transition: width 0.25s var(--ease-spring), height 0.25s var(--ease-spring), background 0.2s;
-  mix-blend-mode: multiply;
-}
-.cursor-trail {
-  position: fixed; width: 32px; height: 32px;
-  border: 1.5px solid var(--z-green); border-radius: 50%;
-  pointer-events: none; z-index: 9998;
-  transform: translate(-50%,-50%);
-  opacity: 0.4;
-  transition: transform 0.18s var(--ease-expo);
-}
-@media (max-width: 768px) { .cursor, .cursor-trail { display: none; } body { cursor: auto; } }
 
 /* ── SCROLL BAR ──────────────────────────────────────── */
 .scroll-bar {
@@ -146,7 +128,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 14px; font-weight: 600; color: white;
   background: var(--z-green); padding: 12px 24px; border-radius: 8px;
-  text-decoration: none; border: none; cursor: none;
+  text-decoration: none; border: none; cursor: pointer;
   transition: background 0.2s, transform 0.2s var(--ease-spring);
   box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 0 4px 16px rgba(46,110,67,0.4);
 }
@@ -200,7 +182,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .ch-card {
   background: white; border: 1px solid var(--z-border); border-radius: 12px;
   padding: 24px 20px; text-decoration: none; color: inherit;
-  display: block; cursor: none;
+  display: block; cursor: pointer;
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s var(--ease-spring);
   position: relative; overflow: hidden;
 }
@@ -273,7 +255,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 }
 .toggle-btn {
   font-size: 13px; font-weight: 600; padding: 8px 20px;
-  border-radius: 7px; border: none; cursor: none;
+  border-radius: 7px; border: none; cursor: pointer;
   background: transparent; color: var(--z-muted);
   transition: background 0.2s, color 0.2s;
 }
@@ -507,14 +489,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   .chapter-grid,.gm-grid{grid-template-columns:1fr 1fr}
   .stat-strip,.ring-grid,.grid-2,.grid-3,.cmp-grid,.finding-2up{grid-template-columns:1fr}
   .finding-2up.flip{direction:ltr}
-  body{cursor:auto}
 }
 </style>
 </head>
 <body>
 
-<div class="cursor" id="cur" style="left: 626px; top: 375px; width: 10px; height: 10px; background: var(--z-green);"></div>
-<div class="cursor-trail" id="trail" style="left: 626px; top: 375px;"></div>
 <div class="scroll-bar" id="sb" style="transform: scaleX(0);"></div>
 
 <!-- NAV -->
@@ -1015,16 +994,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 </div>
 
 <script>
-// CURSOR
-const cur = document.getElementById('cur'), trail = document.getElementById('trail');
-let mx=0,my=0,tx=0,ty=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function tick(){tx+=(mx-tx)*0.13;ty+=(my-ty)*0.13;trail.style.left=tx+'px';trail.style.top=ty+'px';requestAnimationFrame(tick);})();
-document.querySelectorAll('a,button').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';cur.style.background='var(--z-green-mid)';});
-  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';cur.style.background='var(--z-green)';});
-});
-
 // SCROLL
 const sb=document.getElementById('sb'), nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{
