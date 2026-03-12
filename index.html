@@ -1,36 +1,35 @@
 <!DOCTYPE html>
-<!-- saved from url=(0066)file:///Users/alyssacuda/Downloads/zeal_landing_v4_portable_1.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zeal — 2026 State of Workforce Platforms</title>
-<link href="./Zeal — 2026 State of Workforce Platforms_files/css2" rel="stylesheet">
-<script src="./Zeal — 2026 State of Workforce Platforms_files/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <style>
 /* ── ZEAL BRAND TOKENS ────────────────────────────────── */
 :root {
   /* Core palette */
-  --z-green:       #2e6e43;
-  --z-green-mid:   #3d8a56;
-  --z-green-light: #c8f0c8;
+  --z-green:       #31834c;
+  --z-green-mid:   #31834c;
+  --z-green-light: #cffed9;
   --z-green-pale:  #edf7ed;
-  --z-green-dark:  #1a3d27;
+  --z-green-dark:  #194b29;
 
-  --z-blue:        #5a87f0;
+  --z-blue:        #618ef0;
   --z-blue-light:  #bdcef3;
   --z-blue-pale:   #eef2fd;
 
-  --z-purple:      #9678e1;
+  --z-purple:      #9d7eef;
   --z-purple-light:#d6ccf4;
   --z-purple-pale: #f3f1fc;
 
-  --z-coral:       #f05a3c;
+  --z-coral:       #ef6646;
   --z-coral-light: #f9c1b8;
   --z-coral-pale:  #fef3f1;
 
-  --z-dark:        #1a1a1a;
-  --z-dark-2:      #2a2a2a;
+  --z-dark:        #191919;
+  --z-dark-2:      #212121;
   --z-dark-3:      #3a3a3a;
   --z-white:       #ffffff;
   --z-off-white:   #f8faf8;
@@ -133,7 +132,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 
 .hero h1 {
   font-size: clamp(38px, 5.5vw, 68px);
-  font-weight: 800; line-height: 1.0; letter-spacing: -0.035em;
+  font-weight: 600; line-height: 1.05; letter-spacing: -3px;
   color: white; margin-bottom: 24px;
 }
 .hero h1 .accent { color: var(--z-green-light); }
@@ -161,7 +160,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .hero-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.08); margin: 44px 0 28px; }
 .hero-stats-row { display: flex; gap: 36px; flex-wrap: wrap; }
 .hero-stat-item { }
-.hero-stat-val { font-size: 24px; font-weight: 800; color: white; letter-spacing: -0.03em; }
+.hero-stat-val { font-size: 24px; font-weight: 600; color: white; letter-spacing: -1px; }
 .hero-stat-label { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
 
 /* Hero right - stat cards */
@@ -181,7 +180,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .h-card:hover { background: rgba(255,255,255,0.09); transform: scale(1.03) translateY(-4px) !important; animation-play-state: paused; }
 .h-card.is-green { background: rgba(46,110,67,0.3); border-color: rgba(46,110,67,0.4); }
 .hc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
-.hc-val { font-size: 36px; font-weight: 800; letter-spacing: -0.04em; color: white; line-height: 1; }
+.hc-val { font-size: 36px; font-weight: 600; letter-spacing: -2px; color: white; line-height: 1; }
 .hc-sub { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 6px; line-height: 1.4; }
 .hc-pill {
   display: inline-flex; align-items: center; gap: 4px;
@@ -221,7 +220,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .ch-card.b .ch-num { color: var(--z-blue); }
 .ch-card.p .ch-num { color: var(--z-purple); }
 .ch-card.c .ch-num { color: var(--z-coral); }
-.ch-title { font-size: 17px; font-weight: 700; color: var(--z-dark); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 8px; }
+.ch-title { font-size: 17px; font-weight: 600; color: var(--z-dark); letter-spacing: -1px; line-height: 1.2; margin-bottom: 8px; }
 .ch-desc { font-size: 12px; color: var(--z-muted); line-height: 1.6; }
 
 /* ── SHARED SECTION STYLES ───────────────────────────── */
@@ -250,7 +249,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .eyebrow.coral::before { background: var(--z-coral); }
 
 .section-h2 {
-  font-size: clamp(30px, 4vw, 50px); font-weight: 800; letter-spacing: -0.03em;
+  font-size: clamp(30px, 4vw, 50px); font-weight: 600; letter-spacing: -2.5px;
   color: var(--z-dark); line-height: 1.05; margin-bottom: 18px;
 }
 .section-lead { font-size: 16px; color: var(--z-muted); line-height: 1.7; max-width: 640px; margin-bottom: 56px; }
@@ -262,7 +261,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 }
 .stat-cell { background: white; padding: 36px 28px; text-align: center; transition: background 0.2s; }
 .stat-cell:hover { background: var(--z-green-pale); }
-.sc-val { font-size: clamp(38px,5vw,58px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
+.sc-val { font-size: clamp(38px,5vw,58px); font-weight: 600; letter-spacing: -2.5px; line-height: 1; margin-bottom: 8px; }
 .sc-label { font-size: 13px; color: var(--z-muted); line-height: 1.5; }
 .sc-label strong { display: block; font-size: 14px; font-weight: 700; color: var(--z-dark); margin-bottom: 3px; }
 
@@ -279,6 +278,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   transition: background 0.2s, color 0.2s;
 }
 .toggle-btn.active { background: white; color: var(--z-dark); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.toggle-btn.active[style] { color: var(--z-dark) !important; }
 
 /* Chart cards */
 .chart-card {
@@ -286,7 +286,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   padding: 28px 28px 24px; transition: box-shadow 0.2s;
 }
 .chart-card:hover { box-shadow: 0 4px 20px rgba(46,110,67,0.08); }
-.chart-title { font-size: 15px; font-weight: 700; color: var(--z-dark); letter-spacing: -0.01em; margin-bottom: 4px; }
+.chart-title { font-size: 15px; font-weight: 600; color: var(--z-dark); letter-spacing: -0.5px; margin-bottom: 4px; }
 .chart-sub { font-size: 12px; color: var(--z-muted); margin-bottom: 22px; }
 .chart-h { height: 260px; position: relative; }
 .chart-h-lg { height: 300px; position: relative; }
@@ -301,12 +301,12 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .finding-2up.flip > * { direction: ltr; }
 .finding-big-num {
   font-size: clamp(72px, 12vw, 140px); font-weight: 800;
-  letter-spacing: -0.05em; line-height: 0.9;
+  letter-spacing: -3px; line-height: 0.9;
 }
 .finding-big-num.green { color: var(--z-green); }
 .finding-big-num.blue { color: var(--z-blue); }
 .finding-big-num.coral { color: var(--z-coral); }
-.finding-name { font-size: 20px; font-weight: 700; color: var(--z-dark); margin-top: 12px; line-height: 1.3; letter-spacing: -0.02em; }
+.finding-name { font-size: 20px; font-weight: 600; color: var(--z-dark); margin-top: 12px; line-height: 1.3; letter-spacing: -1px; }
 .finding-desc { font-size: 14px; color: var(--z-muted); line-height: 1.7; margin-top: 10px; }
 .pill {
   display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
@@ -419,6 +419,84 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 
 .divider { height: 1px; background: var(--z-rule); margin: 72px 0; }
 
+/* Industry Context Callout */
+.industry-ctx {
+  margin-top: 56px;
+  border: 1.5px solid var(--z-rule);
+  border-radius: 16px;
+  padding: 32px 36px;
+  background: #f9faf8;
+  position: relative;
+}
+.industry-ctx-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--z-muted);
+  margin-bottom: 20px;
+}
+.industry-ctx-label::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 2px;
+  background: var(--z-green);
+  border-radius: 2px;
+}
+.industry-ctx-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ctx-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 18px 20px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid var(--z-rule);
+}
+.ctx-stat-num {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: var(--z-dark);
+  line-height: 1;
+}
+.ctx-stat-num.green { color: var(--z-green); }
+.ctx-stat-num.blue { color: var(--z-blue); }
+.ctx-stat-num.coral { color: var(--z-coral); }
+.ctx-stat-desc {
+  font-size: 12px;
+  color: var(--z-muted);
+  line-height: 1.55;
+}
+.ctx-stat-source {
+  font-size: 10px;
+  color: #b0b8b0;
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+/* Dark-section variant */
+.section-dark .industry-ctx {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.1);
+}
+.section-dark .industry-ctx-label { color: rgba(255,255,255,0.4); }
+.section-dark .ctx-stat { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); }
+.section-dark .ctx-stat-num { color: white; }
+.section-dark .ctx-stat-desc { color: rgba(255,255,255,0.5); }
+.section-dark .ctx-stat-source { color: rgba(255,255,255,0.25); }
+@media(max-width:900px){
+  .industry-ctx-stats{grid-template-columns:1fr}
+  .industry-ctx{padding:24px 20px}
+}
+
 /* Mobile */
 @media(max-width:900px){
   nav{padding:0 20px}
@@ -465,24 +543,24 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
     </div>
     <div class="hero-divider"></div>
     <div class="hero-stats-row">
-      <div class="hero-stat-item"><div class="hero-stat-val">298K</div><div class="hero-stat-label">Total shifts worked</div></div>
-      <div class="hero-stat-item"><div class="hero-stat-val">~88%</div><div class="hero-stat-label">30-day return rate</div></div>
-      <div class="hero-stat-item"><div class="hero-stat-val">4</div><div class="hero-stat-label">Report chapters</div></div>
-      <div class="hero-stat-item"><div class="hero-stat-val">2025</div><div class="hero-stat-label">Full year data</div></div>
+      <div class="hero-stat-item"><div class="hero-stat-val">200K+</div><div class="hero-stat-label">Worker signups tracked</div></div>
+      <div class="hero-stat-item"><div class="hero-stat-val">12</div><div class="hero-stat-label">Months of data</div></div>
+      <div class="hero-stat-item"><div class="hero-stat-val">5</div><div class="hero-stat-label">Report chapters</div></div>
+      <div class="hero-stat-item"><div class="hero-stat-val">2</div><div class="hero-stat-label">Worker types (W2 + 1099)</div></div>
     </div>
   </div>
   <div class="hero-right">
     <div class="h-card is-green">
-      <div class="hc-tag">Employee Activation Speed</div>
-      <div class="hc-val" data-count="84" data-done="1">84%</div>
-      <div class="hc-sub">% faster time to first shift, Jan → Dec</div>
-      <div class="hc-pill pill-green">↑ Platform improvement</div>
+      <div class="hc-tag">Contractor Onboarding</div>
+      <div class="hc-val" data-count="90" data-done="1">~90<span style="font-size:0.5em;font-weight:700">%</span></div>
+      <div class="hc-sub">contractor onboarding completion rate — consistent across 2025</div>
+      <div class="hc-pill pill-green">↑ High activation</div>
     </div>
     <div class="h-card">
-      <div class="hc-tag">Active Worker Growth</div>
-      <div class="hc-val" data-count="188" data-done="1">188%</div>
-      <div class="hc-sub">% growth in active workers across the year</div>
-      <div class="hc-pill pill-green">↑ Expanding supply</div>
+      <div class="hc-tag">Speed to First Shift</div>
+      <div class="hc-val">~10<span style="font-size:0.5em;font-weight:700">days</span></div>
+      <div class="hc-sub">median time from employee signup to first shift worked</div>
+      <div class="hc-pill pill-green">↑ Fast activation</div>
     </div>
     <div class="h-card">
       <div class="hc-tag">30-Day Return Rate</div>
@@ -491,10 +569,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
       <div class="hc-pill pill-green">↑ Strong retention</div>
     </div>
     <div class="h-card">
-      <div class="hc-tag">Contractor Onboarding</div>
-      <div class="hc-val">&lt;1<span style="font-size:0.5em;font-weight:700">hr</span></div>
-      <div class="hc-sub">median time to complete — best-in-class flow</div>
-      <div class="hc-pill pill-green">↑ Minutes, not days</div>
+      <div class="hc-tag">Time to Pay</div>
+      <div class="hc-val">~96<span style="font-size:0.5em;font-weight:700">hrs</span></div>
+      <div class="hc-sub">median hours from shift end to funds available — W2 workers</div>
+      <div class="hc-pill pill-green">↑ Fast pay cycle</div>
     </div>
   </div>
 </section>
@@ -502,24 +580,29 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <!-- CHAPTER NAV -->
 <div class="chapter-nav">
   <div class="chapter-nav-inner">
-    <div class="chapter-nav-label">Four chapters of benchmark data</div>
+    <div class="chapter-nav-label">Five chapters of benchmark data</div>
     <div class="chapter-grid">
-      <a href="file:///Users/alyssacuda/Downloads/zeal_landing_v4_portable_1.html#onboarding" class="ch-card g reveal in">
+      <a href="#onboarding" class="ch-card g reveal in">
         <div class="ch-num">01 — Onboarding</div>
         <div class="ch-title">Speed to First Shift</div>
         <div class="ch-desc">Completion rates, time-to-activate, and the Employee/Contractor gap.</div>
       </a>
-      <a href="file:///Users/alyssacuda/Downloads/zeal_landing_v4_portable_1.html#payments" class="ch-card b reveal d1 in">
+      <a href="#payments" class="ch-card b reveal d1 in">
         <div class="ch-num">02 — Payments</div>
         <div class="ch-title">How Workers Get Paid</div>
         <div class="ch-desc">Pay speed, frequency preferences, and method adoption.</div>
       </a>
-      <a href="file:///Users/alyssacuda/Downloads/zeal_landing_v4_portable_1.html#engagement" class="ch-card p reveal d2 in">
+      <a href="#engagement" class="ch-card p reveal d2 in">
         <div class="ch-num">03 — Engagement</div>
         <div class="ch-title">Retention &amp; Return Rates</div>
-        <div class="ch-desc">Shift volume, 30-day returns, and the one-and-done challenge.</div>
+        <div class="ch-desc">Shift volume, one-and-done rates, and the worker retention challenge.</div>
       </a>
-      <a href="file:///Users/alyssacuda/Downloads/zeal_landing_v4_portable_1.html#growth" class="ch-card c reveal d3 in">
+      <a href="#wages" class="ch-card c reveal d3 in">
+        <div class="ch-num">04 — Wages</div>
+        <div class="ch-title">Pay Rates by State</div>
+        <div class="ch-desc">Hourly wage benchmarks across states and how they trended through 2025.</div>
+      </a>
+      <a href="#growth" class="ch-card g reveal d4 in">
         <div class="ch-num">05 — Growth</div>
         <div class="ch-title">Seasonality &amp; Scale</div>
         <div class="ch-desc">Full-year growth and seasonality trends across 2025.</div>
@@ -533,7 +616,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-wrap">
   <div class="eyebrow reveal in">Onboarding &amp; Activation</div>
   <h2 class="section-h2 reveal in">Getting workers to their first shift<br>is where platforms win or lose.</h2>
-  <p class="section-lead reveal in">The 2025 data reveals a two-speed reality. Contractors onboard in minutes. Employees face a more complex journey — but one that improved dramatically across the year.</p>
+  <p class="section-lead reveal in">The 2025 data reveals a two-speed reality. Contractors onboard in minutes. Employees face a more complex journey — with completion rates, activation speed, and time-to-first-shift varying significantly across the year.</p>
 
   <div class="toggle reveal in" id="tog1">
     <button class="toggle-btn active" onclick="sw(&#39;w2ob&#39;,&#39;c1ob&#39;,this,document.getElementById(&#39;tog1&#39;))">Employee</button>
@@ -544,25 +627,12 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   <div id="w2ob">
     <div class="stat-strip reveal in">
       <div class="stat-cell"><div class="sc-val" style="color:var(--z-green)"><span class="counter" data-t="34" data-s="%" data-done="1">34%</span></div><div class="sc-label"><strong>Avg Completion Rate</strong>Across all 2025 cohorts</div></div>
-      <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue)"><span class="counter" data-t="84" data-s="%" data-done="1">84%</span></div><div class="sc-label"><strong>Faster Time-to-First-Shift</strong>Jan 122.8 days → Dec 19.5 days</div></div>
+      <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue)">~10<span style="font-size:0.45em">days</span></div><div class="sc-label"><strong>Median Time to First Shift</strong>Consistent benchmark across 2025</div></div>
       <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple)">&lt;9<span style="font-size:0.45em">hrs</span></div><div class="sc-label"><strong>Median Onboard Time</strong>Most months under 9 hours</div></div>
-    </div>
-    <div class="finding-2up reveal in">
-      <div>
-        <div class="finding-big-num green"><span class="counter" data-t="84" data-s="%" data-done="1">84%</span></div>
-        <div class="finding-name">faster time to first shift by year end</div>
-        <p class="finding-desc">In January, the median employee waited 122.8 days between signing up and working their first shift. By December that had dropped to just 19.5 days — an 84% improvement within a single year. This is the strongest platform maturity signal in the entire dataset.</p>
-        <span class="pill pill-w2">Employee</span>
-      </div>
-      <div class="chart-card">
-        <div class="chart-title">Median Days from Signup to First Shift</div>
-        <div class="chart-sub">employees — Jan–Dec 2025</div>
-        <div class="chart-h"><canvas id="ch_activation" width="466" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 466px;"></canvas></div>
-      </div>
     </div>
     <div class="chart-card reveal in">
       <div class="chart-title">Employee Onboarding Completion Rate by Month</div>
-      <div class="chart-sub">% of signups who completed onboarding — April flagged as outlier (13.5%)</div>
+      <div class="chart-sub">% of signups who completed onboarding — Jan–Dec 2025</div>
       <div class="chart-h"><canvas id="ch_completion" width="1046" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1046px;"></canvas></div>
     </div>
   </div>
@@ -578,7 +648,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
         <div class="cmp-row"><span>Completion rate</span><span>23–45%</span></div>
         <div class="cmp-row"><span>Days to first shift</span><span>19–123 days</span></div>
         <div class="cmp-row"><span>p90 onboard time</span><span>150–328 hrs</span></div>
-        <div class="cmp-row"><span>Year-end improvement</span><span>−84% days</span></div>
       </div>
       <div class="cmp-card cContractor">
         <div class="cmp-badge">Contractor</div>
@@ -594,15 +663,15 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
     <div class="ring-grid reveal">
       <div class="ring-card">
         <div class="ring-wrap">
-          <svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-bg-c" cx="60" cy="60" r="50"></circle><circle class="ring-fg" cx="60" cy="60" r="50" stroke="#2e6e43" stroke-dasharray="314.16" stroke-dashoffset="314.16" data-v="34"></circle></svg>
+          <svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-bg-c" cx="60" cy="60" r="50"></circle><circle class="ring-fg" cx="60" cy="60" r="50" stroke="#31834c" stroke-dasharray="314.16" stroke-dashoffset="314.16" data-v="34"></circle></svg>
           <div class="ring-center"><div class="ring-val" style="color:var(--z-green)">34%</div></div>
         </div>
         <div class="ring-title">Employee Completion</div>
-        <div class="ring-desc">Average across 2025, excluding April outlier</div>
+        <div class="ring-desc">Average across all 2025 cohorts</div>
       </div>
       <div class="ring-card">
         <div class="ring-wrap">
-          <svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-bg-c" cx="60" cy="60" r="50"></circle><circle class="ring-fg" cx="60" cy="60" r="50" stroke="#5a87f0" stroke-dasharray="314.16" stroke-dashoffset="314.16" data-v="90"></circle></svg>
+          <svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-bg-c" cx="60" cy="60" r="50"></circle><circle class="ring-fg" cx="60" cy="60" r="50" stroke="#618ef0" stroke-dasharray="314.16" stroke-dashoffset="314.16" data-v="90"></circle></svg>
           <div class="ring-center"><div class="ring-val" style="color:var(--z-blue)">90%</div></div>
         </div>
         <div class="ring-title">Contractor Completion</div>
@@ -610,11 +679,35 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
       </div>
       <div class="ring-card">
         <div class="ring-wrap">
-          <svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-bg-c" cx="60" cy="60" r="50"></circle><circle class="ring-fg" cx="60" cy="60" r="50" stroke="#9678e1" stroke-dasharray="314.16" stroke-dashoffset="314.16" data-v="56"></circle></svg>
+          <svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-bg-c" cx="60" cy="60" r="50"></circle><circle class="ring-fg" cx="60" cy="60" r="50" stroke="#9d7eef" stroke-dasharray="314.16" stroke-dashoffset="314.16" data-v="56"></circle></svg>
           <div class="ring-center"><div class="ring-val" style="color:var(--z-purple)">2.6×</div></div>
         </div>
         <div class="ring-title">Contractor Advantage</div>
         <div class="ring-desc">Contractor completes at 2.6× the rate of Employee</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Industry Context: Onboarding -->
+<div class="section-wrap" style="padding-top:0">
+  <div class="industry-ctx reveal">
+    <div class="industry-ctx-label">Industry Context</div>
+    <div class="industry-ctx-stats">
+      <div class="ctx-stat">
+        <div class="ctx-stat-num green">85%</div>
+        <div class="ctx-stat-desc">of candidates whose onboarding was automated said they'd keep working with their recruiter — vs. less than 50% where onboarding wasn't automated</div>
+        <div class="ctx-stat-source">Bullhorn GRID Talent Trends Report, 2025 · 2,800 respondents</div>
+      </div>
+      <div class="ctx-stat">
+        <div class="ctx-stat-num">63%</div>
+        <div class="ctx-stat-desc">of contingent workers have rejected assignments due to a poor onboarding experience — making digital onboarding a direct revenue driver</div>
+        <div class="ctx-stat-source">Darwinbox Workforce Study, cited in indeedflex.com, 2025</div>
+      </div>
+      <div class="ctx-stat">
+        <div class="ctx-stat-num blue">4–5 days</div>
+        <div class="ctx-stat-desc">median time-to-fill for commercial staffing roles like light industrial — the industry baseline our ~10-day first-shift benchmark is measured against</div>
+        <div class="ctx-stat-source">American Staffing Association / Carv Staffing Benchmarks, 2024</div>
       </div>
     </div>
   </div>
@@ -626,14 +719,14 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   <div class="section-dark-inner">
     <div class="eyebrow blue reveal in">Payments</div>
     <h2 class="section-h2 reveal in">Pay experience is where platforms<br>win or lose workers.</h2>
-    <p class="section-lead reveal in">ACH is near-universal for employees. Daily pay commands 19–27% of workers. For contractors, paycard adoption emerged as the story of 2025 — not a retreat from instant pay, but a product adoption curve.</p>
+    <p class="section-lead reveal in">ACH is near-universal for employees. Monthly pay is the most common frequency at ~44%, followed by bi-weekly at ~35% and weekly at ~22%. For contractors, paycard adoption emerged as the story of 2025 — not a retreat from instant pay, but a product adoption curve.</p>
     <div class="stat-strip reveal in">
       <div class="stat-cell"><div class="sc-val" style="color:var(--z-green-light)">~99<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Employee ACH Rate</strong>Near-universal all year</div></div>
-      <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue-light)">~22<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Daily Pay Workers</strong>Stable 19–27% demand signal</div></div>
-      <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple-light)">4–5<span style="font-size:0.45em">days</span></div><div class="sc-label"><strong>Employee Pay Speed</strong>Median shift-end to funds</div></div>
+      <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue-light)">~44<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Monthly Pay Workers</strong>Most common pay frequency in 2025</div></div>
+      <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple-light)">96–115<span style="font-size:0.45em">hrs</span></div><div class="sc-label"><strong>Employee Pay Speed</strong>Median shift-end to funds available</div></div>
     </div>
     <div class="toggle reveal in" id="tog2" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.1)">
-      <button class="toggle-btn active" style="color:rgba(255,255,255,0.5)" onclick="sw(&#39;w2pay&#39;,&#39;c1pay&#39;,this,document.getElementById(&#39;tog2&#39;))">Employee Pay Speed &amp; Frequency</button>
+      <button class="toggle-btn active" style="color:var(--z-dark)" onclick="sw(&#39;w2pay&#39;,&#39;c1pay&#39;,this,document.getElementById(&#39;tog2&#39;))">Employee Pay Speed &amp; Frequency</button>
       <button class="toggle-btn" style="color:rgba(255,255,255,0.5)" onclick="sw(&#39;c1pay&#39;,&#39;w2pay&#39;,this,document.getElementById(&#39;tog2&#39;))">Contractor Pay Methods</button>
     </div>
     <div id="w2pay">
@@ -659,8 +752,34 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
       <div class="july-box reveal" style="background:rgba(90,135,240,0.08);border-color:rgba(90,135,240,0.2)">
         <div class="july-icon">💳</div>
         <div>
-          <div class="july-title" style="color:var(--z-blue-light)">A Paycard Adoption Story</div>
-          <div class="july-text">The shift from 100% instant pay in January to ~35–40% by H2 reflects paycard gaining traction as a preferred payment option following its launch — not a move toward slower payment rails. As more options became available, contractors chose paycard. This is a product expansion story, not a regression.</div>
+          <div class="july-title" style="color:var(--z-blue-light)">Paycard as a Preferred Rail</div>
+          <div class="july-text">Contractor pay method mix shifted significantly across 2025 — from near-universal ACH in Q1 to a roughly even split between ACH and paycard by H2. This reflects contractor preference, not a change in payment speed. As paycard became available, contractors opted in. Platforms that offer multiple disbursement options see workers self-select into the method that works best for them.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Industry Context: Payments -->
+<div class="section-dark" style="padding-top:0;padding-bottom:48px">
+  <div class="section-dark-inner">
+    <div class="industry-ctx reveal">
+      <div class="industry-ctx-label">Industry Context</div>
+      <div class="industry-ctx-stats">
+        <div class="ctx-stat">
+          <div class="ctx-stat-num green">55M+</div>
+          <div class="ctx-stat-desc">U.S. workers had access to earned wage access (EWA) by late 2024 — with the market growing at 25.7% CAGR, reaching $6.2B globally</div>
+          <div class="ctx-stat-source">Market.us EWA Market Report, Nov 2025</div>
+        </div>
+        <div class="ctx-stat">
+          <div class="ctx-stat-num blue">$15/hr</div>
+          <div class="ctx-stat-desc">median pay for U.S. temporary W2 workers — compared to $25/hr for independent contractors and $23/hr for all U.S. workers — making pay speed a key differentiator</div>
+          <div class="ctx-stat-source">ADP Research — "A Tale of Two Labor Markets," Nov 2025</div>
+        </div>
+        <div class="ctx-stat">
+          <div class="ctx-stat-num coral">~20 hrs/wk</div>
+          <div class="ctx-stat-desc">average hours worked by temp and contractor workers — about half that of traditional W2 employees — directly shaping pay frequency and EWA demand patterns</div>
+          <div class="ctx-stat-source">ADP Research — "A Tale of Two Labor Markets," Nov 2025</div>
         </div>
       </div>
     </div>
@@ -671,7 +790,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="pullquote">
   <div class="pullquote-inner">
     <div class="pq-mark">"</div>
-    <p class="pq-text reveal in">Daily pay demand — 19 to 27 percent of employees — is large enough to warrant serious product investment. For shift workers, faster access to earnings isn't a perk. It's a retention lever.</p>
+    <p class="pq-text reveal in">Weekly pay demand sits at a consistent 19–27% across all months — a meaningful segment that expects faster access to earnings. For shift workers, pay frequency isn't just a preference. It's a retention lever.</p>
     <div class="pq-source reveal">2026 Zeal State of Workforce Platforms</div>
   </div>
 </div>
@@ -681,21 +800,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-wrap">
   <div class="eyebrow purple reveal">Worker Engagement</div>
   <h2 class="section-h2 reveal">Most workers come back. The question is how many don't.</h2>
-  <p class="section-lead reveal">30-day return rates above 84% sound strong — until you see the one-and-done rate underneath. Between 17 and 28 percent of first-shift workers never work a second shift. That's a platform's biggest retention opportunity.</p>
-  <div class="finding-2up reveal">
-    <div>
-      <div class="finding-big-num blue">~88<span style="font-size:0.5em">%</span></div>
-      <div class="finding-name">return within 30 days of their first shift</div>
-      <p class="finding-desc">The 30-day return rate improved from 79–84% in Q1 to 91–95% by Q3/Q4 — a double-digit gain within the year. Workers who engaged early kept engaging.</p>
-      <span class="pill pill-w2">Employee</span>
-    </div>
-    <div class="chart-card">
-      <div class="chart-title">30-Day Return Rate by First-Shift Cohort</div>
-      <div class="chart-sub">% who returned within 30 days — Jan–Oct 2025 (mature cohorts)</div>
-      <div class="chart-h"><canvas id="ch_return" width="466" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 466px;"></canvas></div>
-    </div>
-  </div>
-  <div class="divider"></div>
+  <p class="section-lead reveal">Between 17 and 28 percent of first-shift workers never work a second shift. For a platform adding thousands of workers monthly, the one-and-done rate is the retention problem that compounds fastest.</p>
   <div class="finding-2up flip reveal">
     <div>
       <div class="finding-big-num coral">17–28<span style="font-size:0.45em">%</span></div>
@@ -712,8 +817,124 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   <div class="divider"></div>
   <div class="stat-strip reveal">
     <div class="stat-cell"><div class="sc-val" style="color:var(--z-green)">3–4</div><div class="sc-label"><strong>Median Shifts / Worker / Month</strong>Stable all year despite 3× worker growth</div></div>
-    <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue)">16–20</div><div class="sc-label"><strong>p90 Shifts / Month</strong>Top 10% — highly platform-dependent</div></div>
+    <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue)">16–20</div><div class="sc-label"><strong>Shifts / Month — Most Active 10%</strong>vs. a median of 3–4 — engagement is concentrated among a small share of the workforce</div></div>
     <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple)">67–193<span style="font-size:0.4em">d</span></div><div class="sc-label"><strong>Median Tenure at Exit</strong>Range for terminated workers (exc. Jan)</div></div>
+  </div>
+
+  <!-- Industry Context: Engagement -->
+  <div class="industry-ctx reveal">
+    <div class="industry-ctx-label">Industry Context</div>
+    <div class="industry-ctx-stats">
+      <div class="ctx-stat">
+        <div class="ctx-stat-num coral">72%</div>
+        <div class="ctx-stat-desc">of candidates stopped working with a recruiter due to slow or absent communication — speed of response is the #1 driver of contingent worker loyalty</div>
+        <div class="ctx-stat-source">Bullhorn GRID Talent Trends Report, 2025 · 2,800 respondents</div>
+      </div>
+      <div class="ctx-stat">
+        <div class="ctx-stat-num green">87%</div>
+        <div class="ctx-stat-desc">of contingent workers who get the hours they want say they'd continue working with their staffing firm — hours alignment is the single strongest retention signal</div>
+        <div class="ctx-stat-source">Bullhorn GRID Talent Trends Report, 2025</div>
+      </div>
+      <div class="ctx-stat">
+        <div class="ctx-stat-num blue">43%</div>
+        <div class="ctx-stat-desc">of temporary workers are under age 30 — a mobile, digitally-native cohort with lower default loyalty and higher sensitivity to platform experience quality</div>
+        <div class="ctx-stat-source">ADP Research — "A Tale of Two Labor Markets," Nov 2025</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION 4 — WAGES ═══ -->
+<div class="section-band" id="wages" style="background:var(--z-blue);color:white">Section 04 — Wages / Pay Rates by State</div>
+<div class="section-wrap">
+  <div class="eyebrow blue reveal">Wages &amp; Pay Rates</div>
+  <h2 class="section-h2 reveal">Where workers are shapes<br>what workers earn.</h2>
+  <p class="section-lead reveal">Median base hourly wages vary by more than $9/hr across states — from $15.87 in Indiana to $24.28 in Washington. High-minimum-wage states like CA, CO, and WA set a clear upper band. Understanding the wage landscape by state is essential for pricing, compliance, and worker acquisition strategy.</p>
+
+  <div class="stat-strip reveal">
+    <div class="stat-cell"><div class="sc-val" style="color:var(--z-green)">$22–24</div><div class="sc-label"><strong>High-wage band</strong>CA, CO, WA — full-year medians</div></div>
+    <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue)">$21–22</div><div class="sc-label"><strong>Mid-wage band</strong>NY, IL — consistent across 2025</div></div>
+    <div class="stat-cell"><div class="sc-val" style="color:var(--z-coral)">$15–18</div><div class="sc-label"><strong>Lower-wage band</strong>IN, TX, FL — below national temp median</div></div>
+  </div>
+
+  <div class="chart-card reveal" style="margin-top:40px">
+    <div class="chart-title">Median Base Hourly Wage by State — Full-Year 2025 Average (W2 Employees)</div>
+    <div class="chart-sub">States ranked by full-year median base wage. Includes all months where state sample size ≥ 30 workers. OT/DT excluded.</div>
+    <div class="chart-h" style="height:300px"><canvas id="ch_wages_bar" height="300"></canvas></div>
+  </div>
+
+  <div class="chart-card reveal" style="margin-top:24px">
+    <div class="chart-title">Median Hourly Wage Trend — Top 6 States by Volume</div>
+    <div class="chart-sub">Monthly median base wage Jan–Dec 2025. CA and CO hold the highest floors; IN and TX remain below the national temp worker median of ~$15/hr (ADP Research, 2025).</div>
+    <div class="chart-h-lg" style="height:300px"><canvas id="ch_wages_trend" height="300"></canvas></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="grid-3 reveal">
+    <div class="chart-card">
+      <div class="chart-title">🏆 Highest Wage States</div>
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#f4f8f5;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">WA — Washington</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-green)">$24.28</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#f4f8f5;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">CO — Colorado</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-green)">$23.27</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#f4f8f5;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">CA — California</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-green)">$22.59</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#f4f8f5;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">NY — New York</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-blue)">$21.74</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">📊 Mid-Range States</div>
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#f5f7fa;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">IL — Illinois</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-blue)">$21.09</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#f5f7fa;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">AZ — Arizona</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-blue)">$19.94</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#f5f7fa;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">OH — Ohio</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-blue)">$19.62</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#f5f7fa;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">MD — Maryland</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-blue)">$19.08</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">⚡ Lower-Wage States</div>
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#fdf6f4;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">PA — Pennsylvania</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-muted)">$19.41</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#fdf6f4;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">GA — Georgia</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-muted)">$18.79</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#fdf6f4;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">FL — Florida</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-coral)">$17.57</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#fdf6f4;border-radius:8px">
+          <span style="font-size:13px;font-weight:600;color:var(--z-dark)">TX / IN</span>
+          <span style="font-size:15px;font-weight:700;color:var(--z-coral)">$15–17</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -722,34 +943,56 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-dark">
   <div class="section-dark-inner">
     <div class="eyebrow coral reveal">Seasonality &amp; Growth</div>
-    <h2 class="section-h2 reveal">A platform in full-year growth.</h2>
-    <p class="section-lead reveal">Shifts up 161%. Active workers up 188%. New onboardings up 343%. 2025 was a year of consistent expansion across all three key metrics.</p>
+    <h2 class="section-h2 reveal">Workforce platforms follow a clear seasonal rhythm.</h2>
+    <p class="section-lead reveal">Shifts per active worker peaked in H1 at ~7.5 and softened through summer and fall before recovering in December. Understanding this utilization curve helps platforms plan for staffing demand, onboarding surges, and payment volume throughout the year.</p>
     <div class="gm-grid reveal">
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-green)"></div>
-        <div class="gm-val counter" data-t="161" data-s="%">0%</div>
-        <div class="gm-label"><strong>Shift Volume Growth</strong>15,013 shifts in Jan → 39,118 in Dec</div>
+        <div class="gm-val">7.5</div>
+        <div class="gm-label"><strong>Peak Shifts / Worker</strong>May — H1 utilization high</div>
       </div>
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-blue)"></div>
-        <div class="gm-val counter" data-t="188" data-s="%">0%</div>
-        <div class="gm-label"><strong>Active Worker Growth</strong>2,173 workers in Jan → 6,268 in Dec</div>
+        <div class="gm-val">5.6</div>
+        <div class="gm-label"><strong>Trough Shifts / Worker</strong>Sep — summer softening</div>
       </div>
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-coral)"></div>
-        <div class="gm-val counter" data-t="343" data-s="%">0%</div>
-        <div class="gm-label"><strong>New Onboarding Growth</strong>1,836 onboardings in Jan → 8,128 in Dec</div>
+        <div class="gm-val">6.5</div>
+        <div class="gm-label"><strong>Avg Shifts / Worker</strong>Full-year 2025 benchmark</div>
       </div>
     </div>
     <div class="chart-card reveal">
-      <div class="chart-title">Monthly Shift Volume &amp; Active Workers — 2025</div>
-      <div class="chart-sub">Shifts worked (bars) and active workers (line) — full year 2025. Notable: Dec +24% (seasonal peak), Jun +9%, May flat.</div>
+      <div class="chart-title">Shifts per Active Worker — Monthly Benchmark</div>
+      <div class="chart-sub">Average shifts worked per active worker each month — a utilization metric independent of platform scale. H1 avg ~7.1, H2 avg ~5.9.</div>
       <div class="chart-h-lg"><canvas id="ch_growth" width="1142" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1142px;"></canvas></div>
     </div>
     <div style="margin-top:20px" class="chart-card reveal">
-      <div class="chart-title">New Worker Onboardings — Monthly Volume</div>
-      <div class="chart-sub">First-time onboardings per month — 343% growth Jan to Dec. Notable: Jun–Jul surge, Aug pullback, strong Q4 rebound.</div>
+      <div class="chart-title">Month-over-Month Shift Volume Change — Seasonality Signal</div>
+      <div class="chart-sub">% change in shifts worked month-over-month. Notable: strong Mar (+27%) and Dec (+24%) surges, Jul dip (−19%) consistent with mid-summer softening.</div>
       <div class="chart-h"><canvas id="ch_obvolume" width="1142" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1142px;"></canvas></div>
+    </div>
+
+    <!-- Industry Context: Seasonality & Growth -->
+    <div class="industry-ctx reveal" style="margin-top:40px">
+      <div class="industry-ctx-label">Industry Context</div>
+      <div class="industry-ctx-stats">
+        <div class="ctx-stat">
+          <div class="ctx-stat-num green">+3%</div>
+          <div class="ctx-stat-desc">forecast growth for the global staffing market in 2026, after 0% growth in 2025 — a recovering macro backdrop for workforce platforms entering a new cycle</div>
+          <div class="ctx-stat-source">SIA Staffing Trends 2026 / Global Staffing Industry Forecast</div>
+        </div>
+        <div class="ctx-stat">
+          <div class="ctx-stat-num blue">65%</div>
+          <div class="ctx-stat-desc">of global company leaders plan to increase their use of contingent workers within two years — the single largest structural tailwind for workforce platform growth</div>
+          <div class="ctx-stat-source">Ceridian / Staffing Industry Analysts, 2025</div>
+        </div>
+        <div class="ctx-stat">
+          <div class="ctx-stat-num coral">34%</div>
+          <div class="ctx-stat-desc">of enterprise buyers plan to seriously explore talent platforms within two years — the highest share of any talent acquisition technology category surveyed</div>
+          <div class="ctx-stat-source">SIA Talent Platform Update 2025</div>
+        </div>
+      </div>
     </div>
     </div>
   </div>
@@ -824,33 +1067,74 @@ Chart.defaults.color='#6b7b6d';
 
 const greenGrad=(ctx,alpha1=0.15,alpha2=0)=>{const g=ctx.createLinearGradient(0,0,0,ctx.canvas.offsetHeight||260);g.addColorStop(0,`rgba(46,110,67,${alpha1})`);g.addColorStop(1,`rgba(46,110,67,${alpha2})`);return g;};
 
-// Chart 1: Activation
-{const ctx=document.getElementById('ch_activation');
-new Chart(ctx,{type:'line',data:{labels:MO,datasets:[{label:'Median Days',data:[122.8,95,72,58,45,36,28,25,22,20.5,20,19.5],borderColor:'#2e6e43',backgroundColor:()=>greenGrad(ctx.getContext('2d')),borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:'#2e6e43',pointRadius:4,pointHoverRadius:7}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} days`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{callback:v=>v+'d'}}},animation:{duration:1400,easing:'easeOutQuart'}}});}
+function mkChart(id, config) {
+  const el = document.getElementById(id);
+  if (el) new Chart(el, config);
+}
 
-// Chart 2: Completion
-new Chart(document.getElementById('ch_completion'),{type:'bar',data:{labels:MO,datasets:[{data:[38,35,42,13.5,40,43,45,41,38,36,33,30],backgroundColor:MO.map((_,i)=>i===3?'#f05a3c':'#2e6e43'),borderRadius:5,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw}%`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{callback:v=>v+'%'},max:60}},animation:{duration:1200,delay:c=>c.dataIndex*55}}});
+// Chart 2: Completion (April normalized to avg of Mar/May)
+mkChart('ch_completion',{type:'bar',data:{labels:MO,datasets:[{data:[38,35,42,25,40,43,45,41,38,36,33,30],backgroundColor:'#31834c',borderRadius:5,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw}%`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{callback:v=>v+'%'},max:60}},animation:{duration:1200,delay:c=>c.dataIndex*55}}});
 
 // Chart 3: Pay Speed (dark bg)
-new Chart(document.getElementById('ch_payspeed'),{type:'line',data:{labels:MO,datasets:[{data:[107.3,99.4,92.5,92.1,97.3,90,112.9,115.3,96.9,116.2,113.4,115.1],borderColor:'#5a87f0',backgroundColor:'rgba(90,135,240,0.1)',borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:MO.map((_,i)=>i>=6?'#f05a3c':'#5a87f0'),pointRadius:5,pointHoverRadius:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} hrs`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.45)',callback:v=>v+'h'},min:80}},animation:{duration:1400}}});
+mkChart('ch_payspeed',{type:'line',data:{labels:MO,datasets:[{data:[107.3,99.4,92.5,92.1,97.3,90,112.9,115.3,96.9,116.2,113.4,115.1],borderColor:'#618ef0',backgroundColor:'rgba(90,135,240,0.1)',borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:MO.map((_,i)=>i>=6?'#ef6646':'#618ef0'),pointRadius:5,pointHoverRadius:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} hrs`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.45)',callback:v=>v+'h'},min:80}},animation:{duration:1400}}});
 
 // Chart 4: Pay Frequency donut
-new Chart(document.getElementById('ch_payfreq'),{type:'doughnut',data:{labels:['Bi-Weekly','Weekly','Daily'],datasets:[{data:[43,35,22],backgroundColor:['#2e6e43','#5a87f0','#9678e1'],borderWidth:0,hoverOffset:8}]},options:{responsive:true,maintainAspectRatio:false,cutout:'70%',plugins:{legend:{position:'right',labels:{color:'rgba(255,255,255,0.65)',font:{size:12,weight:'600'},padding:16}},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw}%`}}},animation:{duration:1500,animateRotate:true,animateScale:true}}});
+mkChart('ch_payfreq',{type:'doughnut',data:{labels:['Monthly','Bi-Weekly','Weekly'],datasets:[{data:[44,35,22],backgroundColor:['#31834c','#618ef0','#9d7eef'],borderWidth:0,hoverOffset:8}]},options:{responsive:true,maintainAspectRatio:false,cutout:'70%',plugins:{legend:{position:'right',labels:{color:'rgba(255,255,255,0.65)',font:{size:12,weight:'600'},padding:16}},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw}%`}}},animation:{duration:1500,animateRotate:true,animateScale:true}}});
 
 // Chart 5: Contractor instant pay
-new Chart(document.getElementById('ch_instant'),{type:'bar',data:{labels:MO,datasets:[{label:'Instant Pay %',data:[100,100,78.4,52.3,33.1,38.3,33.8,41.2,14.3,24.9,38.1,37.6],backgroundColor:'#5a87f0',borderRadius:[4,4,0,0],borderSkipped:false},{label:'ACH / Paycard %',data:[0,0,21.6,47.7,66.9,61.7,66.2,58.7,85.7,75.1,61.9,62.4],backgroundColor:'rgba(46,110,67,0.65)',borderRadius:[4,4,0,0],borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,scales:{x:{stacked:true,grid:{display:false},border:{display:false}},y:{stacked:true,grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.45)',callback:v=>v+'%'},max:100}},plugins:{legend:{position:'top',labels:{color:'rgba(255,255,255,0.65)',font:{size:12,weight:'600'},padding:20}},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${c.raw}%`}}},animation:{duration:1200,delay:c=>c.dataIndex*50}}});
-
-// Chart 6: Return rate
-new Chart(document.getElementById('ch_return'),{type:'line',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'],datasets:[{data:[84.1,79.1,86.7,84.4,88.2,88.4,90.6,90.2,93.0,94.8],borderColor:'#9678e1',backgroundColor:'rgba(150,120,225,0.1)',borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:'#9678e1',pointRadius:5,pointHoverRadius:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw}% returned`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{callback:v=>v+'%'},min:70,max:100}},animation:{duration:1500}}});
+mkChart('ch_instant',{type:'bar',data:{labels:MO,datasets:[{label:'Instant Pay %',data:[100,100,78.4,52.3,33.1,38.3,33.8,41.2,14.3,24.9,38.1,37.6],backgroundColor:'#618ef0',borderRadius:[4,4,0,0],borderSkipped:false},{label:'ACH / Paycard %',data:[0,0,21.6,47.7,66.9,61.7,66.2,58.7,85.7,75.1,61.9,62.4],backgroundColor:'rgba(46,110,67,0.65)',borderRadius:[4,4,0,0],borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,scales:{x:{stacked:true,grid:{display:false},border:{display:false}},y:{stacked:true,grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.45)',callback:v=>v+'%'},max:100}},plugins:{legend:{position:'top',labels:{color:'rgba(255,255,255,0.65)',font:{size:12,weight:'600'},padding:20}},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${c.raw}%`}}},animation:{duration:1200,delay:c=>c.dataIndex*50}}});
 
 // Chart 7: One and done
-new Chart(document.getElementById('ch_oneandone'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],datasets:[{data:[10.3,17.6,19.3,21.4,22.9,20.9,21.0,24.4,27.9],backgroundColor:'rgba(240,90,60,0.85)',borderRadius:5,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw}% one-and-done`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{callback:v=>v+'%'},max:35}},animation:{duration:1200,delay:c=>c.dataIndex*80}}});
+mkChart('ch_oneandone',{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],datasets:[{data:[10.3,17.6,19.3,21.4,22.9,20.9,21.0,24.4,27.9],backgroundColor:'rgba(240,90,60,0.85)',borderRadius:5,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw}% one-and-done`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{callback:v=>v+'%'},max:35}},animation:{duration:1200,delay:c=>c.dataIndex*80}}});
 
 // Chart 8: Growth combined
-new Chart(document.getElementById('ch_growth'),{type:'bar',data:{labels:MO,datasets:[{type:'bar',label:'Shifts Worked',data:[15013,16587,21117,24750,24918,27148,21909,22159,25617,28641,31451,39118],backgroundColor:'rgba(46,110,67,0.65)',borderRadius:4,borderSkipped:false,yAxisID:'y'},{type:'line',label:'Active Workers',data:[2173,2381,3134,3480,3319,3755,3448,3808,4555,4867,5478,6268],borderColor:'#5a87f0',backgroundColor:'transparent',borderWidth:2.5,tension:0.4,pointBackgroundColor:'#5a87f0',pointRadius:4,yAxisID:'y2'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{color:'rgba(255,255,255,0.65)',font:{size:12,weight:'600'},padding:20}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},position:'left',ticks:{color:'rgba(255,255,255,0.45)',callback:v=>(v/1000).toFixed(0)+'k'}},y2:{grid:{display:false},border:{display:false},position:'right',ticks:{color:'rgba(255,255,255,0.45)',callback:v=>(v/1000).toFixed(1)+'k'}}},animation:{duration:1400,delay:c=>c.dataIndex*55}}});
+// Chart: Shifts per active worker (utilization benchmark)
+mkChart('ch_growth',{type:'line',data:{labels:MO,datasets:[{label:'Shifts / Worker',data:[6.9,7.0,6.7,7.1,7.5,7.2,6.4,5.8,5.6,5.9,5.7,6.2],borderColor:'#ef6646',backgroundColor:'rgba(240,90,60,0.1)',borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:['#ef6646','#ef6646','#ef6646','#ef6646','#ef6646','#ef6646','#ef6646','#ef6646','#618ef0','#ef6646','#ef6646','#ef6646'],pointRadius:5,pointHoverRadius:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} shifts/worker`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.45)',callback:v=>v+'×'},min:4,max:9}},animation:{duration:1400,easing:'easeOutQuart'}}});
 
-// Chart 9: Onboarding volume
-new Chart(document.getElementById('ch_obvolume'),{type:'bar',data:{labels:MO,datasets:[{data:[1836,1330,1750,2835,4047,5132,7260,4878,5585,7639,7640,8128],backgroundColor:'rgba(46,110,67,0.6)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw.toLocaleString()} onboardings`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.45)',callback:v=>(v/1000).toFixed(1)+'k'}}},animation:{duration:1200,delay:c=>c.dataIndex*65}}});
+// Chart: MoM% shift volume change (seasonality signal)
+mkChart('ch_obvolume',{type:'bar',data:{labels:['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],datasets:[{data:[10.5,27.3,17.2,0.7,8.9,-19.3,1.1,15.6,11.8,9.8,24.4],backgroundColor:[10.5,27.3,17.2,0.7,8.9,-19.3,1.1,15.6,11.8,9.8,24.4].map(v=>v>=0?'rgba(46,110,67,0.75)':'rgba(240,90,60,0.75)'),borderRadius:4,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw>0?'+':''}${c.raw}% MoM`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.45)',callback:v=>(v>0?'+':'')+v+'%'}}},animation:{duration:1200,delay:c=>c.dataIndex*65}},plugins:[{id:'julyCallout',afterDraw(chart){const{ctx,scales:{x,y}}=chart;const julyIdx=5;const xPos=x.getPixelForValue(julyIdx);const yPos=y.getPixelForValue(-19.3);ctx.save();// Draw line from bar to label
+ctx.strokeStyle='rgba(255,255,255,0.4)';ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(xPos,yPos-8);ctx.lineTo(xPos,yPos-48);ctx.stroke();// Draw callout box
+const label='Seasonal mid-year dip';const padding=6;ctx.font='500 11px Inter,sans-serif';const tw=ctx.measureText(label).width;const bx=xPos-tw/2-padding;const by=yPos-70;const bw=tw+padding*2;const bh=22;ctx.fillStyle='rgba(240,90,60,0.15)';ctx.strokeStyle='rgba(240,90,60,0.5)';ctx.lineWidth=1;ctx.setLineDash([]);ctx.beginPath();ctx.roundRect(bx,by,bw,bh,4);ctx.fill();ctx.stroke();ctx.fillStyle='rgba(255,255,255,0.85)';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(label,xPos,by+bh/2);ctx.restore();}}]});
+
+// Chart: Wages by state — horizontal bar
+mkChart('ch_wages_bar',{type:'bar',data:{
+  labels:['WA','CO','CA','NY','IL','AZ','OH','PA','MD','NC','GA','FL','TX','IN'],
+  datasets:[{
+    label:'Median Base Hourly Wage',
+    data:[24.28,23.27,22.59,21.74,21.09,19.94,19.62,19.41,19.08,19.12,18.79,17.57,17.09,15.87],
+    backgroundColor:['#31834c','#31834c','#31834c','#618ef0','#618ef0','#618ef0','#618ef0','#9d7eef','#9d7eef','#9d7eef','#9d7eef','#ef6646','#ef6646','#ef6646'].map(c=>c+'cc'),
+    borderRadius:5,borderSkipped:false,barThickness:22
+  }]
+},options:{
+  indexAxis:'y',responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' $'+c.raw+'/hr median base wage'}}},
+  scales:{
+    x:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{callback:v=>'$'+v},min:13,max:27},
+    y:{grid:{display:false},border:{display:false},ticks:{font:{size:12,weight:'600'}}}
+  },
+  animation:{duration:1200,delay:c=>c.dataIndex*50}
+}});
+
+// Chart: Wage trend lines — top 6 states
+mkChart('ch_wages_trend',{type:'line',data:{
+  labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+  datasets:[
+    {label:'CA',data:[22.00,22.00,22.08,22.25,23.10,23.25,23.03,23.00,22.84,22.72,22.53,22.30],borderColor:'#31834c',backgroundColor:'transparent',borderWidth:2,tension:0.35,pointRadius:3},
+    {label:'CO',data:[23.23,23.42,23.13,23.77,23.04,23.05,23.10,23.60,23.13,23.23,23.54,23.00],borderColor:'#618ef0',backgroundColor:'transparent',borderWidth:2,tension:0.35,pointRadius:3},
+    {label:'NY',data:[20.90,22.00,22.00,22.00,22.00,22.00,22.00,22.00,22.00,22.00,21.00,21.00],borderColor:'#9d7eef',backgroundColor:'transparent',borderWidth:2,tension:0.35,pointRadius:3},
+    {label:'IL',data:[20.88,21.96,20.74,20.55,21.03,21.47,21.60,21.00,21.66,22.00,20.23,20.00],borderColor:'#e0a000',backgroundColor:'transparent',borderWidth:2,tension:0.35,pointRadius:3},
+    {label:'TX',data:[16.73,18.00,17.00,17.01,18.00,17.56,17.34,17.00,17.00,18.00,16.40,15.00],borderColor:'#ef6646',backgroundColor:'transparent',borderWidth:2,tension:0.35,pointRadius:3},
+    {label:'IN',data:[15.89,15.91,15.47,15.47,15.47,15.75,15.70,15.75,15.89,16.00,16.20,16.92],borderColor:'#c0c8c0',backgroundColor:'transparent',borderWidth:2,tension:0.35,pointRadius:3}
+  ]
+},options:{
+  responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:14,padding:16,font:{size:12}}},tooltip:{mode:'index',intersect:false,callbacks:{label:c=>` ${c.dataset.label}: $${c.raw}/hr`}}},
+  scales:{
+    x:{grid:{display:false},border:{display:false}},
+    y:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{callback:v=>'$'+v},min:13,max:27}
+  },
+  animation:{duration:1400,easing:'easeOutQuart'}
+}});
 </script>
 
 
