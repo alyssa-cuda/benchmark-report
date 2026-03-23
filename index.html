@@ -538,7 +538,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
     <div class="h-card">
       <div class="hc-tag">Speed to First Shift</div>
       <div class="hc-val">~10<span style="font-size:0.5em;font-weight:700">days</span></div>
-      <div class="hc-sub">median time from employee signup to first shift worked</div>
+      <div class="hc-sub">typical time from when an employee signs up to when they work their first shift</div>
       <div class="hc-pill pill-green">↑ Fast activation</div>
     </div>
     <div class="h-card">
@@ -550,7 +550,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
     <div class="h-card">
       <div class="hc-tag">Time to Pay</div>
       <div class="hc-val">~96<span style="font-size:0.5em;font-weight:700">hrs</span></div>
-      <div class="hc-sub">median hours from shift end to funds available — W2 workers</div>
+      <div class="hc-sub">typical hours between finishing a shift and having money in the bank — W2 employees</div>
       <div class="hc-pill pill-green">↑ Fast pay cycle</div>
     </div>
   </div>
@@ -685,7 +685,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
       </div>
       <div class="ctx-stat">
         <div class="ctx-stat-num blue">4–5 days</div>
-        <div class="ctx-stat-desc">median time-to-fill for commercial staffing roles like light industrial — the industry baseline our ~10-day first-shift benchmark is measured against</div>
+        <div class="ctx-stat-desc">how long it typically takes to fill a role in industries like light industrial — the standard our ~10-day first-shift number is benchmarked against</div>
         <div class="ctx-stat-source">American Staffing Association / Carv Staffing Benchmarks, 2024</div>
       </div>
     </div>
@@ -698,11 +698,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   <div class="section-dark-inner">
     <div class="eyebrow blue reveal in">Payments</div>
     <h2 class="section-h2 reveal in">Pay experience is where platforms<br>win or lose workers.</h2>
-    <p class="section-lead reveal in">ACH is near-universal for employees. Monthly pay is the most common frequency at ~44%, followed by bi-weekly at ~35% and weekly at ~22%. For contractors, paycard adoption emerged as the story of 2025 — not a retreat from instant pay, but a product adoption curve.</p>
+    <p class="section-lead reveal in">Most employees get paid by direct deposit. About half get paid monthly, one in three bi-weekly, and roughly one in five weekly. For contractors, paycards became increasingly popular through 2025 — not because workers wanted slower pay, but because those who had the option chose it.</p>
     <div class="stat-strip reveal in">
       <div class="stat-cell"><div class="sc-val" style="color:var(--z-green-light)">~99<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Employee ACH Rate</strong>Near-universal all year</div></div>
       <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue-light)">~44<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Monthly Pay Workers</strong>Most common pay frequency in 2025</div></div>
-      <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple-light)">96–115<span style="font-size:0.45em">hrs</span></div><div class="sc-label"><strong>Employee Pay Speed</strong>Median shift-end to funds available</div></div>
+      <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple-light)">96–115<span style="font-size:0.45em">hrs</span></div><div class="sc-label"><strong>Time to Get Paid</strong>How long after a shift before money hits the account</div></div>
     </div>
     <div class="toggle reveal in" id="tog2" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.1)">
       <button class="toggle-btn active" style="color:var(--z-dark)" onclick="sw(&#39;w2pay&#39;,&#39;c1pay&#39;,this,document.getElementById(&#39;tog2&#39;))">Employee Pay Speed &amp; Frequency</button>
@@ -779,12 +779,12 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-wrap">
   <div class="eyebrow purple reveal">Worker Engagement</div>
   <h2 class="section-h2 reveal">Most workers come back. The question is how many don't.</h2>
-  <p class="section-lead reveal">Between 17 and 28 percent of first-shift workers never work a second shift. For a platform adding thousands of workers monthly, the one-and-done rate is the retention problem that compounds fastest.</p>
+  <p class="section-lead reveal">As many as 1 in 4 workers who complete a first shift never come back. The faster a platform grows, the more this matters — because every worker who disappears after one shift is a missed relationship that quietly compounds.</p>
   <div class="finding-2up flip reveal">
     <div>
       <div class="finding-big-num coral">17–28<span style="font-size:0.45em">%</span></div>
       <div class="finding-name">never work a second shift after their first</div>
-      <p class="finding-desc">The one-and-done rate — workers who complete a first shift and never return — ranges from 17 to 28% across mature cohorts. For a platform adding thousands of workers monthly, this is the conversion problem that compounds fastest.</p>
+      <p class="finding-desc">Between 1 in 6 and 1 in 4 workers complete a first shift and never come back. For a growing platform, this is the retention leak that gets harder to ignore over time.</p>
       <span class="pill pill-w2">Employee</span>
     </div>
     <div class="chart-card">
@@ -795,9 +795,9 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   </div>
   <div class="divider"></div>
   <div class="stat-strip reveal">
-    <div class="stat-cell"><div class="sc-val" style="color:var(--z-green)">3–4</div><div class="sc-label"><strong>Median Shifts / Worker / Month</strong>Stable all year despite 3× worker growth</div></div>
-    <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue)">16–20</div><div class="sc-label"><strong>Shifts / Month — Most Active 10%</strong>vs. a median of 3–4 — engagement is concentrated among a small share of the workforce</div></div>
-    <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple)">67–193<span style="font-size:0.4em">d</span></div><div class="sc-label"><strong>Median Tenure at Exit</strong>Range for terminated workers (exc. Jan)</div></div>
+    <div class="stat-cell"><div class="sc-val" style="color:var(--z-green)">3–4</div><div class="sc-label"><strong>Typical Shifts per Worker, per Month</strong>Held steady all year — even as the workforce tripled in size</div></div>
+    <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue)">16–20</div><div class="sc-label"><strong>Shifts / Month — Most Active 10%</strong>A small group of workers carries most of the activity — working 4–5× more than the average</div></div>
+    <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple)">67–193<span style="font-size:0.4em">d</span></div><div class="sc-label"><strong>How Long Workers Stayed</strong>Typical time on the platform before leaving — roughly 2 to 6 months</div></div>
   </div>
 
   <!-- Industry Context: Engagement -->
@@ -828,7 +828,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-wrap">
   <div class="eyebrow blue reveal">Wages &amp; Pay Rates</div>
   <h2 class="section-h2 reveal">Where workers are shapes<br>what workers earn.</h2>
-  <p class="section-lead reveal">Median base hourly wages vary by more than $9/hr across states — from $15.87 in Indiana to $24.28 in Washington. High-minimum-wage states like CA, CO, and WA set a clear upper band. Understanding the wage landscape by state is essential for pricing, compliance, and worker acquisition strategy.</p>
+  <p class="section-lead reveal">Where a worker lives can mean nearly $10/hr more or less in their paycheck. Washington, Colorado, and California consistently pay the highest wages. Indiana, Texas, and Florida sit at the lower end. Knowing where wages land by state matters for what you pay, what you charge, and who you can attract.</p>
 
   <div class="stat-strip reveal">
     <div class="stat-cell"><div class="sc-val" style="color:var(--z-green)">$22–24</div><div class="sc-label"><strong>High-wage band</strong>CA, CO, WA — full-year medians</div></div>
@@ -838,13 +838,13 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 
   <div class="chart-card reveal" style="margin-top:40px">
     <div class="chart-title">Median Base Hourly Wage by State — Full-Year 2025 Average (W2 Employees)</div>
-    <div class="chart-sub">States ranked by full-year median base wage. Includes all months where state sample size ≥ 30 workers. OT/DT excluded.</div>
+    <div class="chart-sub">States ranked by average hourly base wage for the year. Only states with enough workers to be statistically meaningful are included. Overtime and double-time pay are not factored in.</div>
     <div class="chart-h" style="height:300px"><canvas id="ch_wages_bar" height="300"></canvas></div>
   </div>
 
   <div class="chart-card reveal" style="margin-top:24px">
     <div class="chart-title">Median Hourly Wage Trend — Top 6 States by Volume</div>
-    <div class="chart-sub">Monthly median base wage Jan–Dec 2025. CA and CO hold the highest floors; IN and TX remain below the national temp worker median of ~$15/hr (ADP Research, 2025).</div>
+    <div class="chart-sub">How hourly wages shifted month by month across the top six states. California and Colorado consistently led. Indiana and Texas stayed below the national average for temp workers all year.</div>
     <div class="chart-h-lg" style="height:300px"><canvas id="ch_wages_trend" height="300"></canvas></div>
   </div>
 
@@ -928,27 +928,27 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-green)"></div>
         <div class="gm-val">7.5</div>
-        <div class="gm-label"><strong>Peak Shifts / Worker</strong>May — H1 utilization high</div>
+        <div class="gm-label"><strong>Busiest Month per Worker</strong>May — workers were most active in the first half of the year</div>
       </div>
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-blue)"></div>
         <div class="gm-val">5.6</div>
-        <div class="gm-label"><strong>Trough Shifts / Worker</strong>Sep — summer softening</div>
+        <div class="gm-label"><strong>Slowest Month per Worker</strong>September — activity dipped after the summer slowdown</div>
       </div>
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-coral)"></div>
         <div class="gm-val">6.5</div>
-        <div class="gm-label"><strong>Avg Shifts / Worker</strong>Full-year 2025 benchmark</div>
+        <div class="gm-label"><strong>Typical Shifts / Worker</strong>The monthly average across all of 2025</div>
       </div>
     </div>
     <div class="chart-card reveal">
       <div class="chart-title">Shifts per Active Worker — Monthly Benchmark</div>
-      <div class="chart-sub">Average shifts worked per active worker each month — a utilization metric independent of platform scale. H1 avg ~7.1, H2 avg ~5.9.</div>
+      <div class="chart-sub">How many shifts a typical active worker completed each month — regardless of how big the platform got. Workers were noticeably busier in the first half of the year than the second.</div>
       <div class="chart-h-lg"><canvas id="ch_growth" width="1142" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1142px;"></canvas></div>
     </div>
     <div style="margin-top:20px" class="chart-card reveal">
       <div class="chart-title">Month-over-Month Shift Volume Change — Seasonality Signal</div>
-      <div class="chart-sub">% change in shifts worked month-over-month. Notable: strong Mar (+27%) and Dec (+24%) surges, Jul dip (−19%) consistent with mid-summer softening.</div>
+      <div class="chart-sub">How shift volume changed from month to month. March and December saw the biggest spikes. July had the sharpest drop — a consistent summer slowdown.</div>
       <div class="chart-h"><canvas id="ch_obvolume" width="1142" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1142px;"></canvas></div>
     </div>
 
