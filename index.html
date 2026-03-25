@@ -697,12 +697,13 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-dark">
   <div class="section-dark-inner">
     <div class="eyebrow blue reveal in">Payments</div>
-    <h2 class="section-h2 reveal in">Pay experience is where platforms<br>win or lose workers.</h2>
-    <p class="section-lead reveal in">Most employees get paid by direct deposit. About half get paid monthly, one in three bi-weekly, and roughly one in five weekly. For contractors, paycards became increasingly popular through 2025 — not because workers wanted slower pay, but because those who had the option chose it.</p>
+    <h2 class="section-h2 reveal in">Pay is where trust is won — or lost</h2>
+    <p class="section-lead reveal in">Payment performance varies widely across platforms — from near-instant payouts to multi-day delays. That gap directly impacts worker trust and retention.</p>
+    <p class="section-body reveal in" style="max-width:760px;margin:0 auto 32px;opacity:0.85;line-height:1.75">Most platforms think they have a payments system. Workers experience it as a reliability test. A payment that arrives late — or fails — isn't treated as an edge case. It's treated as a broken promise.<br><br>In our dataset, time to pay depends heavily on infrastructure, funding models, and payout methods. Some platforms are able to deliver funds within hours. Others take multiple days. That difference shows up immediately: workers check balances frequently, expectations are shaped by instant payouts in other apps, and tolerance for delays is low.<br><br>Pay speed isn't just an operational metric. It directly impacts whether workers come back.</p>
     <div class="stat-strip reveal in">
-      <div class="stat-cell"><div class="sc-val" style="color:var(--z-green-light)">~99<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Employee ACH Rate</strong>Near-universal all year</div></div>
-      <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue-light)">~44<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Monthly Pay Workers</strong>Most common pay frequency in 2025</div></div>
-      <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple-light)">96–115<span style="font-size:0.45em">hrs</span></div><div class="sc-label"><strong>Time to Get Paid</strong>How long after a shift before money hits the account</div></div>
+      <div class="stat-cell"><div class="sc-val" style="color:var(--z-green-light)">~99<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Employee ACH Rate</strong>Near-universal in our dataset — but rail choice doesn't determine speed</div></div>
+      <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue-light)">~44<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Monthly Pay Workers</strong>Most common cadence in our dataset — while ~1 in 5 workers expect weekly pay</div></div>
+      <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple-light)">96–115<span style="font-size:0.45em">hrs</span></div><div class="sc-label"><strong>Time to Pay — Dataset Range</strong>Fastest platforms: near-instant to same-day. Slower platforms: multiple days</div></div>
     </div>
     <div class="toggle reveal in" id="tog2" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.1)">
       <button class="toggle-btn active" style="color:var(--z-dark)" onclick="sw(&#39;w2pay&#39;,&#39;c1pay&#39;,this,document.getElementById(&#39;tog2&#39;))">Employee Pay Speed &amp; Frequency</button>
@@ -712,7 +713,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
       <div class="grid-2 reveal in">
         <div class="chart-card">
           <div class="chart-title">Median Hours: Shift End → Funds Available</div>
-          <div class="chart-sub">Employee — Jul onward reflects H2 uptick; benchmark range 90–116 hrs</div>
+          <div class="chart-sub">Time to pay varies significantly across platforms. The fastest platforms deliver funds within hours, while others take multiple days depending on infrastructure and funding models.</div>
           <div class="chart-h"><canvas id="ch_payspeed" width="532" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 532px;"></canvas></div>
         </div>
         <div class="chart-card">
@@ -724,15 +725,15 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
     </div>
     <div id="c1pay" style="display:none">
       <div class="chart-card reveal">
-        <div class="chart-title">Contractor Pay Method Mix — Paycard Adoption Curve</div>
-        <div class="chart-sub">Instant pay % as paycard launched and gained traction, Jan–Dec 2025</div>
+        <div class="chart-title">Contractor Pay Method Mix — Disbursement Rail Breakdown</div>
+        <div class="chart-sub">Distribution of payout methods in our dataset — ACH vs. paycard. Method choice reflects worker preference, not payment speed.</div>
         <div class="chart-h-lg"><canvas id="ch_instant" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
       </div>
       <div class="july-box reveal" style="background:rgba(90,135,240,0.08);border-color:rgba(90,135,240,0.2)">
         <div class="july-icon">💳</div>
         <div>
-          <div class="july-title" style="color:var(--z-blue-light)">Paycard as a Preferred Rail</div>
-          <div class="july-text">Contractor pay method mix shifted significantly across 2025 — from near-universal ACH in Q1 to a roughly even split between ACH and paycard by H2. This reflects contractor preference, not a change in payment speed. As paycard became available, contractors opted in. Platforms that offer multiple disbursement options see workers self-select into the method that works best for them.</div>
+          <div class="july-title" style="color:var(--z-blue-light)">Payout Rail Shapes the Experience — But Speed Is Determined Upstream</div>
+          <div class="july-text">In our dataset, contractor pay method mix shows a meaningful shift toward paycard adoption — reflecting worker preference for flexibility, not necessarily faster funds. The underlying speed of payment is determined by platform infrastructure and funding models, not the rail alone. Platforms that offer multiple disbursement options see workers self-select into the method that works best for them. What matters is whether funds are available when expected — regardless of how they arrive.</div>
         </div>
       </div>
     </div>
@@ -769,7 +770,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="pullquote">
   <div class="pullquote-inner">
     <div class="pq-mark">"</div>
-    <p class="pq-text reveal in">Weekly pay demand sits at a consistent 19–27% across all months — a meaningful segment that expects faster access to earnings. For shift workers, pay frequency isn't just a preference. It's a retention lever.</p>
+    <p class="pq-text reveal in">The issue isn't just how fast you send money. It's how often something goes wrong — and how quickly you fix it.</p>
     <div class="pq-source reveal">2026 Zeal State of Workforce Platforms</div>
   </div>
 </div>
