@@ -453,8 +453,16 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   margin-top: 4px;
   letter-spacing: 0.02em;
 }
-/* Section bands hidden */
-.section-band { display: none; }
+/* Section bands — neutral dividers */
+.section-band {
+  padding: 11px 40px; text-align: center;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--z-muted);
+  background: #f3f3f3;
+  border-top: 1px solid var(--z-border);
+  border-bottom: 1px solid var(--z-border);
+}
+.band-green, .band-blue, .band-purple, .band-coral { background: #f3f3f3; color: var(--z-muted); }
 
 /* Dark-section industry-ctx (now light, inherits defaults) */
 .section-dark .industry-ctx { background: #f9faf8; border-color: var(--z-border); }
@@ -877,7 +885,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 </div>
 
 <!-- ═══ SECTION 4 — WAGES ═══ -->
-<div class="section-band" id="wages" style="background:var(--z-blue);color:white">Section 04 — Wages / Pay Rates by State</div>
+<div class="section-band" id="wages">Section 04 — Wages / Pay Rates by State</div>
 <div class="section-wrap">
   <div class="eyebrow blue reveal">Wages &amp; Pay Rates</div>
   <h2 class="section-h2 reveal">Where you operate determines what workers cost</h2>
