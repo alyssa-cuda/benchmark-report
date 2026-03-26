@@ -260,6 +260,8 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .chart-card:hover { box-shadow: 0 4px 20px rgba(46,110,67,0.08); }
 .chart-title { font-size: 15px; font-weight: 600; color: var(--z-dark); letter-spacing: -0.5px; margin-bottom: 4px; }
 .chart-sub { font-size: 12px; color: var(--z-muted); margin-bottom: 22px; }
+.chart-cite { font-size: 11px; color: #b0b0b0; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--z-border); }
+.chart-cite strong { font-weight: 600; color: var(--z-muted); }
 .chart-h { height: 260px; position: relative; }
 .chart-h-lg { height: 300px; position: relative; }
 
@@ -559,13 +561,15 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px">
     <div class="chart-card reveal in">
       <div class="chart-title">U.S. Staffing Revenue, 2019–2026F</div>
-      <div class="chart-sub">The staffing segment is the most measurable proxy for the broader workforce platform market. COVID collapse → rebound → normalization → contraction → stabilization → modest recovery. 2025–2026 estimated. Source: SIA Global Staffing Industry Forecast.</div>
+      <div class="chart-sub">The staffing segment is the most measurable proxy for the broader workforce platform market. COVID collapse → rebound → normalization → contraction → stabilization → modest recovery. 2025–2026 figures are estimates.</div>
       <div class="chart-h"><canvas id="ch_staffing_rev" width="560" height="260"></canvas></div>
+      <div class="chart-cite"><strong>Source:</strong> Staffing Industry Analysts (SIA) — Global Staffing Industry Forecast, 2025. Revenue figures in USD billions.</div>
     </div>
     <div class="chart-card reveal in">
       <div class="chart-title">Independent Workers in the U.S., 2011–2025</div>
-      <div class="chart-sub">Full-time, part-time, and diversified independent workers. 2019 reflects methodology expansion. COVID drove a spike to 59M in 2020; structural growth has since settled near 73M. Source: MBO Partners State of Independence Report.</div>
+      <div class="chart-sub">Full-time, part-time, and diversified independent workers. 2019 reflects a methodology expansion; 2020 spike driven by COVID-related gig adoption; structural growth has settled near 73M.</div>
       <div class="chart-h"><canvas id="ch_independent_workers" width="560" height="260"></canvas></div>
+      <div class="chart-cite"><strong>Source:</strong> MBO Partners — State of Independence in America Report, 2025. Figures in millions of U.S. workers.</div>
     </div>
   </div>
 
