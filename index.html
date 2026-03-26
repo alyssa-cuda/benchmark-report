@@ -557,6 +557,50 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   </div>
 </section>
 
+<!-- ═══ EXECUTIVE SUMMARY ═══ -->
+<div class="section-wrap" id="exec-summary">
+  <div class="eyebrow reveal in">Executive Summary</div>
+  <h2 class="section-h2 reveal in">When the market stops growing,<br>execution becomes the edge.</h2>
+  <p class="section-lead reveal in">The U.S. staffing market peaked at $207B in 2022 and has contracted since. Modest recovery is forecast for 2026 — but a rising tide doesn't lift all platforms equally. In a stabilizing market, what separates high-performing platforms from the rest is operational fundamentals: how fast workers activate, how reliably they get paid, and how consistently they come back. This report benchmarks those fundamentals across workforce platforms in our dataset — covering W2 employees and independent contractors across onboarding, payments, retention, wages, and seasonality.</p>
+
+  <div class="chart-card reveal in" style="margin-top:40px">
+    <div class="chart-title">U.S. Staffing Market Revenue — 2019 to 2026</div>
+    <div class="chart-sub">COVID collapse → historic rebound → normalization → contraction → stabilization → modest recovery. 2025 and 2026 are estimates/forecast. Source: SIA Global Staffing Industry Forecast.</div>
+    <div class="chart-h"><canvas id="ch_staffing_rev" width="1142" height="260"></canvas></div>
+  </div>
+
+  <div style="margin-top:48px">
+    <div class="eyebrow reveal in" style="margin-bottom:20px">Key Findings</div>
+    <div class="reveal in" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px">
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">01 — Onboarding</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-green)">~10<span style="font-size:0.4em;font-weight:700">days</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Median time to first shift — top platforms activate workers in under 9 days</div>
+      </div>
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">02 — Payments</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-blue)">96–115<span style="font-size:0.4em;font-weight:700">hrs</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Time-to-pay range across platforms — fastest deliver funds within hours</div>
+      </div>
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">03 — Retention</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-coral)">17–28<span style="font-size:0.4em;font-weight:700">%</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Of workers do not return after their first shift — the second shift is the real signal</div>
+      </div>
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">04 — Wages</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-purple)">~$9<span style="font-size:0.4em;font-weight:700">/hr</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Wage spread from lowest to highest state — geography sets the floor</div>
+      </div>
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">05 — Seasonality</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-coral)">34<span style="font-size:0.4em;font-weight:700">%</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Swing between peak and trough worker utilization — platforms that plan for it outperform those that don't</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CHAPTER NAV -->
 <div class="chapter-nav">
   <div class="chapter-nav-inner">
@@ -983,13 +1027,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
       <div class="chart-h"><canvas id="ch_obvolume" width="1142" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1142px;"></canvas></div>
     </div>
 
-    <!-- Staffing Market Chart -->
-    <div style="margin-top:32px" class="chart-card reveal">
-      <div class="chart-title">U.S. Staffing Market Revenue — 2019 to 2026</div>
-      <div class="chart-sub">COVID collapse → historic rebound → normalization → contraction → stabilization → modest recovery. 2025 and 2026 are estimates/forecast. Source: SIA Global Staffing Industry Forecast.</div>
-      <div class="chart-h"><canvas id="ch_staffing_rev" width="1142" height="260"></canvas></div>
-    </div>
-    <div class="july-box reveal" style="margin-top:24px;background:rgba(255,120,90,0.06);border-color:rgba(255,120,90,0.2)">
+    <div class="july-box reveal" style="margin-top:32px;background:rgba(255,120,90,0.06);border-color:rgba(255,120,90,0.2)">
       <div class="july-icon">📊</div>
       <div>
         <div class="july-title" style="color:var(--z-coral)">The staffing market isn't growing — it's stabilizing.</div>
