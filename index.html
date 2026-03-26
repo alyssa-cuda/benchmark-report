@@ -557,6 +557,57 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   </div>
 </section>
 
+<!-- ═══ EXECUTIVE SUMMARY ═══ -->
+<div class="section-wrap" id="exec-summary">
+  <div class="eyebrow reveal in">Executive Summary</div>
+  <h2 class="section-h2 reveal in">When the market stops growing,<br>execution becomes the edge.</h2>
+  <p class="section-lead reveal in">Workforce platforms take many forms — staffing agencies, gig marketplaces, contractor networks, direct-dispatch platforms. What they share is the same operating challenge: activate workers fast, pay them reliably, and keep them coming back. The broader market that supports them peaked sharply in 2022 and has been contracting since. Modest recovery is forecast for 2026 — but recovery doesn't lift all platforms equally. In a stabilizing market, the gap between high-performing platforms and the rest comes down to operational fundamentals. This report benchmarks those fundamentals across our dataset of W2 employees and independent contractors — covering onboarding, payments, retention, wages, and seasonality.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px">
+    <div class="chart-card reveal in">
+      <div class="chart-title">U.S. Staffing Revenue, 2019–2026F</div>
+      <div class="chart-sub">The staffing segment is the most measurable proxy for the broader workforce platform market. COVID collapse → rebound → normalization → contraction → stabilization → modest recovery. 2025–2026 estimated. Source: SIA Global Staffing Industry Forecast.</div>
+      <div class="chart-h"><canvas id="ch_staffing_rev" width="560" height="260"></canvas></div>
+    </div>
+    <div class="chart-card reveal in">
+      <div class="chart-title">Independent Workers in the U.S., 2011–2025</div>
+      <div class="chart-sub">Full-time, part-time, and diversified independent workers. 2019 reflects methodology expansion. COVID drove a spike to 59M in 2020; structural growth has since settled near 73M. Source: MBO Partners State of Independence Report.</div>
+      <div class="chart-h"><canvas id="ch_independent_workers" width="560" height="260"></canvas></div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px">
+    <div class="eyebrow reveal in" style="margin-bottom:20px">Key Findings</div>
+    <div class="reveal in" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px">
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">01 — Onboarding</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-green)">~10<span style="font-size:0.4em;font-weight:700">days</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Median time to first shift — top platforms activate workers in under 9 days</div>
+      </div>
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">02 — Payments</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-blue)">96–115<span style="font-size:0.4em;font-weight:700">hrs</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Time-to-pay range across platforms — fastest deliver funds within hours</div>
+      </div>
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">03 — Retention</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-coral)">17–28<span style="font-size:0.4em;font-weight:700">%</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Of workers do not return after their first shift — the second shift is the real signal</div>
+      </div>
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">04 — Wages</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-purple)">~$9<span style="font-size:0.4em;font-weight:700">/hr</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Wage spread from lowest to highest state — geography sets the floor</div>
+      </div>
+      <div style="border:1.5px solid var(--z-rule);border-radius:12px;padding:22px 18px;background:#f9faf8">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--z-muted);margin-bottom:14px">05 — Seasonality</div>
+        <div style="font-size:34px;font-weight:700;letter-spacing:-1.5px;color:var(--z-coral)">34<span style="font-size:0.4em;font-weight:700">%</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--z-dark);margin-top:10px;line-height:1.5">Swing between peak and trough worker utilization — platforms that plan for it outperform those that don't</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CHAPTER NAV -->
 <div class="chapter-nav">
   <div class="chapter-nav-inner">
@@ -680,7 +731,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <!-- Industry Context: Onboarding -->
 <div class="section-wrap" style="padding-top:0">
   <div class="industry-ctx reveal">
-    <div class="industry-ctx-label">Industry Context</div>
     <div class="industry-ctx-stats">
       <div class="ctx-stat">
         <div class="ctx-stat-num green">85%</div>
@@ -753,7 +803,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-dark" style="padding-top:0;padding-bottom:48px">
   <div class="section-dark-inner">
     <div class="industry-ctx reveal">
-      <div class="industry-ctx-label">Industry Context</div>
       <div class="industry-ctx-stats">
         <div class="ctx-stat">
           <div class="ctx-stat-num green">55M+</div>
@@ -820,7 +869,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 
   <!-- Industry Context: Engagement -->
   <div class="industry-ctx reveal">
-    <div class="industry-ctx-label">Industry Context</div>
     <div class="industry-ctx-stats">
       <div class="ctx-stat">
         <div class="ctx-stat-num coral">72%</div>
@@ -948,54 +996,57 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-dark">
   <div class="section-dark-inner">
     <div class="eyebrow coral reveal">Seasonality &amp; Growth</div>
-    <h2 class="section-h2 reveal">Workforce platforms follow a clear seasonal rhythm.</h2>
-    <p class="section-lead reveal">Shifts per active worker peaked in H1 at ~7.5 and softened through summer and fall before recovering in December. Understanding this utilization curve helps platforms plan for staffing demand, onboarding surges, and payment volume throughout the year.</p>
+    <h2 class="section-h2 reveal">Utilization swings are predictable. Most platforms underplan for them.</h2>
+    <p class="section-lead reveal">In our dataset, shifts per active worker range from 5.6 to 7.5 across the year — a 34% swing. That variation has direct implications for staffing capacity, onboarding timing, and payment volume.</p>
+    <p class="section-body reveal" style="max-width:760px;margin:0 auto 32px;line-height:1.75;color:rgba(255,255,255,0.85)">Workforce platforms aren't operating in steady state.<br><br>In our dataset, shifts per active worker swing meaningfully across the year — from a high of 7.5 in peak months to a low of 5.6 at the quietest point. That's nearly a 34% difference in worker utilization between the busiest and slowest periods.<br><br>That swing has operational consequences: demand for new workers is uneven, not linear; onboarding pipelines need to be ahead of utilization peaks, not reactive to them; and payment volume concentrates in high-utilization months.<br><br>The platforms that handle this well treat seasonality as a planning variable — not a surprise.</p>
+    <div class="july-box reveal" style="max-width:760px;margin:0 auto 32px;background:rgba(255,120,90,0.06);border-color:rgba(255,120,90,0.2)">
+      <div class="july-icon">📅</div>
+      <div>
+        <div class="july-title" style="color:var(--z-coral)">Utilization peaks don't wait for your onboarding pipeline to catch up.</div>
+        <div class="july-text">In our dataset, the gap between peak and trough months is nearly 35%. Platforms that plan around that curve fill shifts faster and waste less re-acquisition spend.</div>
+      </div>
+    </div>
     <div class="gm-grid reveal">
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-green)"></div>
         <div class="gm-val">7.5</div>
-        <div class="gm-label"><strong>Busiest Month per Worker</strong>May — workers were most active in the first half of the year</div>
+        <div class="gm-label"><strong>Peak Utilization</strong>Top of the dataset range — highest shifts per active worker recorded</div>
       </div>
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-blue)"></div>
         <div class="gm-val">5.6</div>
-        <div class="gm-label"><strong>Slowest Month per Worker</strong>September — activity dipped after the summer slowdown</div>
+        <div class="gm-label"><strong>Trough Utilization</strong>Bottom of the dataset range — nearly 35% below peak</div>
       </div>
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-coral)"></div>
         <div class="gm-val">6.5</div>
-        <div class="gm-label"><strong>Typical Shifts / Worker</strong>The monthly average across all of 2025</div>
+        <div class="gm-label"><strong>Dataset Average</strong>Median shifts per active worker — the floor most platforms plan around</div>
       </div>
     </div>
     <div class="chart-card reveal">
       <div class="chart-title">Shifts per Active Worker — Monthly Benchmark</div>
-      <div class="chart-sub">How many shifts a typical active worker completed each month — regardless of how big the platform got. Workers were noticeably busier in the first half of the year than the second.</div>
+      <div class="chart-sub">Shifts per active worker in our dataset — holding platform size constant. The gap between peak and trough months is nearly 35%, a meaningful signal for capacity and onboarding planning.</div>
       <div class="chart-h-lg"><canvas id="ch_growth" width="1142" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1142px;"></canvas></div>
     </div>
     <div style="margin-top:20px" class="chart-card reveal">
       <div class="chart-title">Month-over-Month Shift Volume Change — Seasonality Signal</div>
-      <div class="chart-sub">How shift volume changed from month to month. March and December saw the biggest spikes. July had the sharpest drop — a consistent summer slowdown.</div>
+      <div class="chart-sub">Month-over-month shift volume changes in our dataset. Swings are significant — platforms that anticipate this variation can manage onboarding, staffing, and payment capacity more effectively.</div>
       <div class="chart-h"><canvas id="ch_obvolume" width="1142" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1142px;"></canvas></div>
     </div>
 
-    <!-- Industry Context: Seasonality & Growth -->
-    <div class="industry-ctx reveal" style="margin-top:40px">
-      <div class="industry-ctx-label">Industry Context</div>
-      <div class="industry-ctx-stats">
-        <div class="ctx-stat">
-          <div class="ctx-stat-num green">+3%</div>
-          <div class="ctx-stat-desc">forecast growth for the global staffing market in 2026, after 0% growth in 2025 — a recovering macro backdrop for workforce platforms entering a new cycle</div>
-          <div class="ctx-stat-source">SIA Staffing Trends 2026 / Global Staffing Industry Forecast</div>
-        </div>
+    <div class="july-box reveal" style="margin-top:32px;background:rgba(255,120,90,0.06);border-color:rgba(255,120,90,0.2)">
+      <div class="july-icon">📊</div>
+      <div>
+        <div class="july-title" style="color:var(--z-coral)">The staffing market isn't growing — it's stabilizing.</div>
+        <div class="july-text">The next phase of growth won't come from macro tailwinds. It will come from operational efficiency, speed, and technology. The platforms that win won't wait for the market to lift them.</div>
+      </div>
+    </div>
+    <div class="industry-ctx reveal" style="margin-top:32px">
+      <div class="industry-ctx-stats" style="grid-template-columns:1fr">
         <div class="ctx-stat">
           <div class="ctx-stat-num blue">65%</div>
           <div class="ctx-stat-desc">of global company leaders plan to increase their use of contingent workers within two years — the single largest structural tailwind for workforce platform growth</div>
           <div class="ctx-stat-source">Ceridian / Staffing Industry Analysts, 2025</div>
-        </div>
-        <div class="ctx-stat">
-          <div class="ctx-stat-num coral">34%</div>
-          <div class="ctx-stat-desc">of enterprise buyers plan to seriously explore talent platforms within two years — the highest share of any talent acquisition technology category surveyed</div>
-          <div class="ctx-stat-source">SIA Talent Platform Update 2025</div>
         </div>
       </div>
     </div>
@@ -1090,6 +1141,115 @@ mkChart('ch_growth',{type:'line',data:{labels:MO,datasets:[{label:'Shifts / Work
 mkChart('ch_obvolume',{type:'bar',data:{labels:['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],datasets:[{data:[10.5,27.3,17.2,0.7,8.9,-19.3,1.1,15.6,11.8,9.8,24.4],backgroundColor:[10.5,27.3,17.2,0.7,8.9,-19.3,1.1,15.6,11.8,9.8,24.4].map(v=>v>=0?'rgba(46,110,67,0.75)':'rgba(240,90,60,0.75)'),borderRadius:4,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw>0?'+':''}${c.raw}% MoM`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.45)',callback:v=>(v>0?'+':'')+v+'%'}}},animation:{duration:1200,delay:c=>c.dataIndex*65}},plugins:[{id:'julyCallout',afterDraw(chart){const{ctx,scales:{x,y}}=chart;const julyIdx=5;const xPos=x.getPixelForValue(julyIdx);const yPos=y.getPixelForValue(-19.3);ctx.save();// Draw line from bar to label
 ctx.strokeStyle='rgba(255,255,255,0.4)';ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(xPos,yPos-8);ctx.lineTo(xPos,yPos-48);ctx.stroke();// Draw callout box
 const label='Seasonal mid-year dip';const padding=6;ctx.font='500 11px Inter,sans-serif';const tw=ctx.measureText(label).width;const bx=xPos-tw/2-padding;const by=yPos-70;const bw=tw+padding*2;const bh=22;ctx.fillStyle='rgba(240,90,60,0.15)';ctx.strokeStyle='rgba(240,90,60,0.5)';ctx.lineWidth=1;ctx.setLineDash([]);ctx.beginPath();ctx.roundRect(bx,by,bw,bh,4);ctx.fill();ctx.stroke();ctx.fillStyle='rgba(255,255,255,0.85)';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(label,xPos,by+bh/2);ctx.restore();}}]});
+
+// Chart: U.S. Staffing Market Revenue
+mkChart('ch_staffing_rev',{type:'bar',data:{
+  labels:['2019','2020','2021','2022','2023','2024','2025','2026F'],
+  datasets:[{
+    data:[157,124,186,207,190,184.6,187,192],
+    backgroundColor:[
+      'rgba(97,142,240,0.55)',
+      'rgba(240,90,60,0.75)',
+      'rgba(97,142,240,0.55)',
+      'rgba(46,110,67,0.85)',
+      'rgba(97,142,240,0.55)',
+      'rgba(97,142,240,0.55)',
+      'rgba(97,142,240,0.55)',
+      'rgba(97,142,240,0.3)'
+    ],
+    borderRadius:5,borderSkipped:false,barThickness:48
+  }]
+},options:{
+  responsive:true,maintainAspectRatio:false,
+  plugins:{
+    legend:{display:false},
+    tooltip:{callbacks:{label:c=>' $'+c.raw+'B'}}
+  },
+  scales:{
+    x:{grid:{display:false},border:{display:false},ticks:{color:'rgba(255,255,255,0.55)',font:{size:12,weight:'600'}}},
+    y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.4)',callback:v=>'$'+v+'B'},min:80,max:230}
+  },
+  animation:{duration:1200,delay:c=>c.dataIndex*80}
+},plugins:[{id:'staffingAnnotations',afterDraw(chart){
+  const{ctx,scales:{x,y}}=chart;
+  ctx.save();
+  // Value labels on each bar
+  chart.data.datasets[0].data.forEach((val,i)=>{
+    const xPos=x.getPixelForValue(i);
+    const yPos=y.getPixelForValue(val);
+    ctx.font='600 11px Inter,sans-serif';
+    ctx.textAlign='center';
+    ctx.fillStyle='rgba(255,255,255,0.7)';
+    ctx.fillText('$'+val+'B',xPos,yPos-8);
+  });
+  // Peak label
+  const px=x.getPixelForValue(3),py=y.getPixelForValue(207);
+  ctx.font='700 10px Inter,sans-serif';
+  ctx.fillStyle='rgba(46,110,67,1)';
+  ctx.fillText('PEAK',px,py-22);
+  // COVID label
+  const cx2=x.getPixelForValue(1),cy=y.getPixelForValue(124);
+  ctx.fillStyle='rgba(240,90,60,0.9)';
+  ctx.fillText('COVID',cx2,cy-22);
+  // Forecast label
+  const fx=x.getPixelForValue(7),fy=y.getPixelForValue(192);
+  ctx.fillStyle='rgba(97,142,240,0.6)';
+  ctx.fillText('FORECAST',fx,fy-22);
+  ctx.restore();
+}}]});
+
+// Chart: Independent Workers in the U.S. — MBO Partners
+mkChart('ch_independent_workers',{type:'line',data:{
+  labels:['2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],
+  datasets:[{
+    data:[15.9,16.9,17.7,18.3,19.1,19.9,20.4,21.1,30.0,59.0,51.1,64.6,72.1,72.7,72.9],
+    borderColor:'rgba(97,142,240,0.9)',
+    backgroundColor:'rgba(97,142,240,0.08)',
+    borderWidth:2.5,
+    fill:true,
+    tension:0.4,
+    pointRadius:[3,3,3,3,3,3,3,3,5,6,5,3,3,3,5],
+    pointBackgroundColor:[
+      'rgba(97,142,240,0.8)','rgba(97,142,240,0.8)','rgba(97,142,240,0.8)',
+      'rgba(97,142,240,0.8)','rgba(97,142,240,0.8)','rgba(97,142,240,0.8)',
+      'rgba(97,142,240,0.8)','rgba(97,142,240,0.8)',
+      'rgba(157,126,239,0.95)',
+      'rgba(239,102,70,0.95)',
+      'rgba(239,102,70,0.7)',
+      'rgba(97,142,240,0.8)','rgba(97,142,240,0.8)','rgba(97,142,240,0.8)',
+      'rgba(46,110,67,0.95)'
+    ],
+    pointBorderColor:'rgba(255,255,255,0.9)',
+    pointBorderWidth:2
+  }]
+},options:{
+  responsive:true,maintainAspectRatio:false,
+  plugins:{
+    legend:{display:false},
+    tooltip:{callbacks:{label:c=>` ${c.raw}M independent workers`}}
+  },
+  scales:{
+    x:{grid:{display:false},border:{display:false},ticks:{color:'rgba(0,0,0,0.45)',font:{size:11,weight:'600'},maxRotation:0}},
+    y:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{color:'rgba(0,0,0,0.4)',callback:v=>v+'M'},min:0,max:80}
+  },
+  animation:{duration:1400,delay:c=>c.dataIndex*60}
+},plugins:[{id:'iwAnnotations',afterDraw(chart){
+  const{ctx,scales:{x,y}}=chart;
+  ctx.save();
+  [
+    [8, 30.0, ['METHODOLOGY','SHIFT'], 'rgba(130,100,210,0.9)', -46],
+    [9, 59.0, ['COVID','SPIKE'],       'rgba(220,70,40,0.9)',   -30],
+    [14,72.9, ['72.9M'],               'rgba(46,110,67,1)',     -18]
+  ].forEach(([idx,val,lines,color,yOff])=>{
+    const xp=x.getPixelForValue(idx);
+    const yp=y.getPixelForValue(val)+yOff;
+    ctx.font='700 9px Inter,sans-serif';
+    ctx.textAlign='center';
+    ctx.fillStyle=color;
+    lines.forEach((line,li)=>ctx.fillText(line,xp,yp+li*11));
+  });
+  ctx.restore();
+}}]});
 
 // Chart: Wages by state — horizontal bar
 mkChart('ch_wages_bar',{type:'bar',data:{
