@@ -561,12 +561,19 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-wrap" id="exec-summary">
   <div class="eyebrow reveal in">Executive Summary</div>
   <h2 class="section-h2 reveal in">When the market stops growing,<br>execution becomes the edge.</h2>
-  <p class="section-lead reveal in">The U.S. staffing market peaked at $207B in 2022 and has contracted since. Modest recovery is forecast for 2026 — but a rising tide doesn't lift all platforms equally. In a stabilizing market, what separates high-performing platforms from the rest is operational fundamentals: how fast workers activate, how reliably they get paid, and how consistently they come back. This report benchmarks those fundamentals across workforce platforms in our dataset — covering W2 employees and independent contractors across onboarding, payments, retention, wages, and seasonality.</p>
+  <p class="section-lead reveal in">Workforce platforms take many forms — staffing agencies, gig marketplaces, contractor networks, direct-dispatch platforms. What they share is the same operating challenge: activate workers fast, pay them reliably, and keep them coming back. The broader market that supports them peaked sharply in 2022 and has been contracting since. Modest recovery is forecast for 2026 — but recovery doesn't lift all platforms equally. In a stabilizing market, the gap between high-performing platforms and the rest comes down to operational fundamentals. This report benchmarks those fundamentals across our dataset of W2 employees and independent contractors — covering onboarding, payments, retention, wages, and seasonality.</p>
 
-  <div class="chart-card reveal in" style="margin-top:40px">
-    <div class="chart-title">U.S. Staffing Market Revenue — 2019 to 2026</div>
-    <div class="chart-sub">COVID collapse → historic rebound → normalization → contraction → stabilization → modest recovery. 2025 and 2026 are estimates/forecast. Source: SIA Global Staffing Industry Forecast.</div>
-    <div class="chart-h"><canvas id="ch_staffing_rev" width="1142" height="260"></canvas></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px">
+    <div class="chart-card reveal in">
+      <div class="chart-title">U.S. Staffing Revenue, 2019–2026F</div>
+      <div class="chart-sub">The staffing segment is the most measurable proxy for the broader workforce platform market. COVID collapse → rebound → normalization → contraction → stabilization → modest recovery. 2025–2026 estimated. Source: SIA Global Staffing Industry Forecast.</div>
+      <div class="chart-h"><canvas id="ch_staffing_rev" width="560" height="260"></canvas></div>
+    </div>
+    <div class="chart-card reveal in">
+      <div class="chart-title">Independent Workers in the U.S., 2011–2025</div>
+      <div class="chart-sub">Full-time, part-time, and diversified independent workers. 2019 reflects methodology expansion. COVID drove a spike to 59M in 2020; structural growth has since settled near 73M. Source: MBO Partners State of Independence Report.</div>
+      <div class="chart-h"><canvas id="ch_independent_workers" width="560" height="260"></canvas></div>
+    </div>
   </div>
 
   <div style="margin-top:48px">
@@ -1188,6 +1195,59 @@ mkChart('ch_staffing_rev',{type:'bar',data:{
   const fx=x.getPixelForValue(7),fy=y.getPixelForValue(192);
   ctx.fillStyle='rgba(97,142,240,0.6)';
   ctx.fillText('FORECAST',fx,fy-22);
+  ctx.restore();
+}}]});
+
+// Chart: Independent Workers in the U.S. — MBO Partners
+mkChart('ch_independent_workers',{type:'line',data:{
+  labels:['2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],
+  datasets:[{
+    data:[15.9,16.9,17.7,18.3,19.1,19.9,20.4,21.1,30.0,59.0,51.1,64.6,72.1,72.7,72.9],
+    borderColor:'rgba(97,142,240,0.9)',
+    backgroundColor:'rgba(97,142,240,0.08)',
+    borderWidth:2.5,
+    fill:true,
+    tension:0.4,
+    pointRadius:[3,3,3,3,3,3,3,3,5,6,5,3,3,3,5],
+    pointBackgroundColor:[
+      'rgba(97,142,240,0.8)','rgba(97,142,240,0.8)','rgba(97,142,240,0.8)',
+      'rgba(97,142,240,0.8)','rgba(97,142,240,0.8)','rgba(97,142,240,0.8)',
+      'rgba(97,142,240,0.8)','rgba(97,142,240,0.8)',
+      'rgba(157,126,239,0.95)',
+      'rgba(239,102,70,0.95)',
+      'rgba(239,102,70,0.7)',
+      'rgba(97,142,240,0.8)','rgba(97,142,240,0.8)','rgba(97,142,240,0.8)',
+      'rgba(46,110,67,0.95)'
+    ],
+    pointBorderColor:'rgba(255,255,255,0.9)',
+    pointBorderWidth:2
+  }]
+},options:{
+  responsive:true,maintainAspectRatio:false,
+  plugins:{
+    legend:{display:false},
+    tooltip:{callbacks:{label:c=>` ${c.raw}M independent workers`}}
+  },
+  scales:{
+    x:{grid:{display:false},border:{display:false},ticks:{color:'rgba(0,0,0,0.45)',font:{size:11,weight:'600'},maxRotation:0}},
+    y:{grid:{color:'rgba(0,0,0,0.05)'},border:{display:false},ticks:{color:'rgba(0,0,0,0.4)',callback:v=>v+'M'},min:0,max:80}
+  },
+  animation:{duration:1400,delay:c=>c.dataIndex*60}
+},plugins:[{id:'iwAnnotations',afterDraw(chart){
+  const{ctx,scales:{x,y}}=chart;
+  ctx.save();
+  [
+    [8, 30.0, ['METHODOLOGY','SHIFT'], 'rgba(130,100,210,0.9)', -46],
+    [9, 59.0, ['COVID','SPIKE'],       'rgba(220,70,40,0.9)',   -30],
+    [14,72.9, ['72.9M'],               'rgba(46,110,67,1)',     -18]
+  ].forEach(([idx,val,lines,color,yOff])=>{
+    const xp=x.getPixelForValue(idx);
+    const yp=y.getPixelForValue(val)+yOff;
+    ctx.font='700 9px Inter,sans-serif';
+    ctx.textAlign='center';
+    ctx.fillStyle=color;
+    lines.forEach((line,li)=>ctx.fillText(line,xp,yp+li*11));
+  });
   ctx.restore();
 }}]});
 
