@@ -948,33 +948,41 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-dark">
   <div class="section-dark-inner">
     <div class="eyebrow coral reveal">Seasonality &amp; Growth</div>
-    <h2 class="section-h2 reveal">Workforce platforms follow a clear seasonal rhythm.</h2>
-    <p class="section-lead reveal">Shifts per active worker peaked in H1 at ~7.5 and softened through summer and fall before recovering in December. Understanding this utilization curve helps platforms plan for staffing demand, onboarding surges, and payment volume throughout the year.</p>
+    <h2 class="section-h2 reveal">Utilization swings are predictable. Most platforms underplan for them.</h2>
+    <p class="section-lead reveal">In our dataset, shifts per active worker range from 5.6 to 7.5 across the year — a 34% swing. That variation has direct implications for staffing capacity, onboarding timing, and payment volume.</p>
+    <p class="section-body reveal" style="max-width:760px;margin:0 auto 32px;line-height:1.75;color:rgba(255,255,255,0.85)">Workforce platforms aren't operating in steady state.<br><br>In our dataset, shifts per active worker swing meaningfully across the year — from a high of 7.5 in peak months to a low of 5.6 at the quietest point. That's nearly a 34% difference in worker utilization between the busiest and slowest periods.<br><br>That swing has operational consequences: demand for new workers is uneven, not linear; onboarding pipelines need to be ahead of utilization peaks, not reactive to them; and payment volume concentrates in high-utilization months.<br><br>The platforms that handle this well treat seasonality as a planning variable — not a surprise.</p>
+    <div class="july-box reveal" style="max-width:760px;margin:0 auto 32px;background:rgba(255,120,90,0.06);border-color:rgba(255,120,90,0.2)">
+      <div class="july-icon">📅</div>
+      <div>
+        <div class="july-title" style="color:var(--z-coral)">Utilization peaks don't wait for your onboarding pipeline to catch up.</div>
+        <div class="july-text">In our dataset, the gap between peak and trough months is nearly 35%. Platforms that plan around that curve fill shifts faster and waste less re-acquisition spend.</div>
+      </div>
+    </div>
     <div class="gm-grid reveal">
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-green)"></div>
         <div class="gm-val">7.5</div>
-        <div class="gm-label"><strong>Busiest Month per Worker</strong>May — workers were most active in the first half of the year</div>
+        <div class="gm-label"><strong>Peak Utilization</strong>Top of the dataset range — highest shifts per active worker recorded</div>
       </div>
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-blue)"></div>
         <div class="gm-val">5.6</div>
-        <div class="gm-label"><strong>Slowest Month per Worker</strong>September — activity dipped after the summer slowdown</div>
+        <div class="gm-label"><strong>Trough Utilization</strong>Bottom of the dataset range — nearly 35% below peak</div>
       </div>
       <div class="gm-card">
         <div class="gm-accent" style="background:var(--z-coral)"></div>
         <div class="gm-val">6.5</div>
-        <div class="gm-label"><strong>Typical Shifts / Worker</strong>The monthly average across all of 2025</div>
+        <div class="gm-label"><strong>Dataset Average</strong>Median shifts per active worker — the floor most platforms plan around</div>
       </div>
     </div>
     <div class="chart-card reveal">
       <div class="chart-title">Shifts per Active Worker — Monthly Benchmark</div>
-      <div class="chart-sub">How many shifts a typical active worker completed each month — regardless of how big the platform got. Workers were noticeably busier in the first half of the year than the second.</div>
+      <div class="chart-sub">Shifts per active worker in our dataset — holding platform size constant. The gap between peak and trough months is nearly 35%, a meaningful signal for capacity and onboarding planning.</div>
       <div class="chart-h-lg"><canvas id="ch_growth" width="1142" height="300" style="display: block; box-sizing: border-box; height: 300px; width: 1142px;"></canvas></div>
     </div>
     <div style="margin-top:20px" class="chart-card reveal">
       <div class="chart-title">Month-over-Month Shift Volume Change — Seasonality Signal</div>
-      <div class="chart-sub">How shift volume changed from month to month. March and December saw the biggest spikes. July had the sharpest drop — a consistent summer slowdown.</div>
+      <div class="chart-sub">Month-over-month shift volume changes in our dataset. Swings are significant — platforms that anticipate this variation can manage onboarding, staffing, and payment capacity more effectively.</div>
       <div class="chart-h"><canvas id="ch_obvolume" width="1142" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1142px;"></canvas></div>
     </div>
 
