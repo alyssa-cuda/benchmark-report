@@ -983,23 +983,25 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
       <div class="chart-h"><canvas id="ch_obvolume" width="1142" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1142px;"></canvas></div>
     </div>
 
-    <!-- Industry Context: Seasonality & Growth -->
-    <div class="industry-ctx reveal" style="margin-top:40px">
-      <div class="industry-ctx-stats">
-        <div class="ctx-stat">
-          <div class="ctx-stat-num green">+3%</div>
-          <div class="ctx-stat-desc">forecast growth for the global staffing market in 2026, after 0% growth in 2025 — a recovering macro backdrop for workforce platforms entering a new cycle</div>
-          <div class="ctx-stat-source">SIA Staffing Trends 2026 / Global Staffing Industry Forecast</div>
-        </div>
+    <!-- Staffing Market Chart -->
+    <div style="margin-top:32px" class="chart-card reveal">
+      <div class="chart-title">U.S. Staffing Market Revenue — 2019 to 2026</div>
+      <div class="chart-sub">COVID collapse → historic rebound → normalization → contraction → stabilization → modest recovery. 2025 and 2026 are estimates/forecast. Source: SIA Global Staffing Industry Forecast.</div>
+      <div class="chart-h"><canvas id="ch_staffing_rev" width="1142" height="260"></canvas></div>
+    </div>
+    <div class="july-box reveal" style="margin-top:24px;background:rgba(255,120,90,0.06);border-color:rgba(255,120,90,0.2)">
+      <div class="july-icon">📊</div>
+      <div>
+        <div class="july-title" style="color:var(--z-coral)">The staffing market isn't growing — it's stabilizing.</div>
+        <div class="july-text">The next phase of growth won't come from macro tailwinds. It will come from operational efficiency, speed, and technology. The platforms that win won't wait for the market to lift them.</div>
+      </div>
+    </div>
+    <div class="industry-ctx reveal" style="margin-top:32px">
+      <div class="industry-ctx-stats" style="grid-template-columns:1fr">
         <div class="ctx-stat">
           <div class="ctx-stat-num blue">65%</div>
           <div class="ctx-stat-desc">of global company leaders plan to increase their use of contingent workers within two years — the single largest structural tailwind for workforce platform growth</div>
           <div class="ctx-stat-source">Ceridian / Staffing Industry Analysts, 2025</div>
-        </div>
-        <div class="ctx-stat">
-          <div class="ctx-stat-num coral">34%</div>
-          <div class="ctx-stat-desc">of enterprise buyers plan to seriously explore talent platforms within two years — the highest share of any talent acquisition technology category surveyed</div>
-          <div class="ctx-stat-source">SIA Talent Platform Update 2025</div>
         </div>
       </div>
     </div>
@@ -1094,6 +1096,62 @@ mkChart('ch_growth',{type:'line',data:{labels:MO,datasets:[{label:'Shifts / Work
 mkChart('ch_obvolume',{type:'bar',data:{labels:['Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],datasets:[{data:[10.5,27.3,17.2,0.7,8.9,-19.3,1.1,15.6,11.8,9.8,24.4],backgroundColor:[10.5,27.3,17.2,0.7,8.9,-19.3,1.1,15.6,11.8,9.8,24.4].map(v=>v>=0?'rgba(46,110,67,0.75)':'rgba(240,90,60,0.75)'),borderRadius:4,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw>0?'+':''}${c.raw}% MoM`}}},scales:{x:{grid:{display:false},border:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.45)',callback:v=>(v>0?'+':'')+v+'%'}}},animation:{duration:1200,delay:c=>c.dataIndex*65}},plugins:[{id:'julyCallout',afterDraw(chart){const{ctx,scales:{x,y}}=chart;const julyIdx=5;const xPos=x.getPixelForValue(julyIdx);const yPos=y.getPixelForValue(-19.3);ctx.save();// Draw line from bar to label
 ctx.strokeStyle='rgba(255,255,255,0.4)';ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(xPos,yPos-8);ctx.lineTo(xPos,yPos-48);ctx.stroke();// Draw callout box
 const label='Seasonal mid-year dip';const padding=6;ctx.font='500 11px Inter,sans-serif';const tw=ctx.measureText(label).width;const bx=xPos-tw/2-padding;const by=yPos-70;const bw=tw+padding*2;const bh=22;ctx.fillStyle='rgba(240,90,60,0.15)';ctx.strokeStyle='rgba(240,90,60,0.5)';ctx.lineWidth=1;ctx.setLineDash([]);ctx.beginPath();ctx.roundRect(bx,by,bw,bh,4);ctx.fill();ctx.stroke();ctx.fillStyle='rgba(255,255,255,0.85)';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(label,xPos,by+bh/2);ctx.restore();}}]});
+
+// Chart: U.S. Staffing Market Revenue
+mkChart('ch_staffing_rev',{type:'bar',data:{
+  labels:['2019','2020','2021','2022','2023','2024','2025','2026F'],
+  datasets:[{
+    data:[157,124,186,207,190,184.6,187,192],
+    backgroundColor:[
+      'rgba(97,142,240,0.55)',
+      'rgba(240,90,60,0.75)',
+      'rgba(97,142,240,0.55)',
+      'rgba(46,110,67,0.85)',
+      'rgba(97,142,240,0.55)',
+      'rgba(97,142,240,0.55)',
+      'rgba(97,142,240,0.55)',
+      'rgba(97,142,240,0.3)'
+    ],
+    borderRadius:5,borderSkipped:false,barThickness:48
+  }]
+},options:{
+  responsive:true,maintainAspectRatio:false,
+  plugins:{
+    legend:{display:false},
+    tooltip:{callbacks:{label:c=>' $'+c.raw+'B'}}
+  },
+  scales:{
+    x:{grid:{display:false},border:{display:false},ticks:{color:'rgba(255,255,255,0.55)',font:{size:12,weight:'600'}}},
+    y:{grid:{color:'rgba(255,255,255,0.06)'},border:{display:false},ticks:{color:'rgba(255,255,255,0.4)',callback:v=>'$'+v+'B'},min:80,max:230}
+  },
+  animation:{duration:1200,delay:c=>c.dataIndex*80}
+},plugins:[{id:'staffingAnnotations',afterDraw(chart){
+  const{ctx,scales:{x,y}}=chart;
+  ctx.save();
+  // Value labels on each bar
+  chart.data.datasets[0].data.forEach((val,i)=>{
+    const xPos=x.getPixelForValue(i);
+    const yPos=y.getPixelForValue(val);
+    ctx.font='600 11px Inter,sans-serif';
+    ctx.textAlign='center';
+    ctx.fillStyle='rgba(255,255,255,0.7)';
+    ctx.fillText('$'+val+'B',xPos,yPos-8);
+  });
+  // Peak label
+  const px=x.getPixelForValue(3),py=y.getPixelForValue(207);
+  ctx.font='700 10px Inter,sans-serif';
+  ctx.fillStyle='rgba(46,110,67,1)';
+  ctx.fillText('PEAK',px,py-22);
+  // COVID label
+  const cx2=x.getPixelForValue(1),cy=y.getPixelForValue(124);
+  ctx.fillStyle='rgba(240,90,60,0.9)';
+  ctx.fillText('COVID',cx2,cy-22);
+  // Forecast label
+  const fx=x.getPixelForValue(7),fy=y.getPixelForValue(192);
+  ctx.fillStyle='rgba(97,142,240,0.6)';
+  ctx.fillText('FORECAST',fx,fy-22);
+  ctx.restore();
+}}]});
 
 // Chart: Wages by state — horizontal bar
 mkChart('ch_wages_bar',{type:'bar',data:{
