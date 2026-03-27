@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeal — Social Cards</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #e8e8e8;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+.page-note {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.6;
+}
+.card {
+  width: 1200px;
+  height: 628px;
+  background: white;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* LEFT PANEL */
+.card-left {
+  width: 380px;
+  flex-shrink: 0;
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e9e9e9;
+  position: relative;
+  background-image: url(https://cdn.prod.website-files.com/67631eed00e17775d4407a6b/699f71597e999241997f03c2_dots.png);
+  background-position: 50% 0;
+  background-repeat: repeat-y;
+  background-size: auto;
+}
+.card-left::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 4px;
+}
+.accent-green::before  { background: #31834c; }
+.accent-blue::before   { background: #618ef0; }
+.accent-coral::before  { background: #ef6646; }
+.accent-purple::before { background: #9d7eef; }
+
+.card-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.green  .card-eyebrow  { color: #31834c; }
+.blue   .card-eyebrow  { color: #618ef0; }
+.coral  .card-eyebrow  { color: #ef6646; }
+.purple .card-eyebrow  { color: #9d7eef; }
+
+.card-stat {
+  font-size: 76px;
+  font-weight: 800;
+  letter-spacing: -4px;
+  line-height: 1;
+  margin-bottom: 10px;
+  color: #191919;
+}
+.card-stat .unit {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+.card-stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #747474;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.card-hook {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.65;
+  flex: 1;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #e9e9e9;
+  margin-top: 20px;
+}
+.card-footer img {
+  height: 16px;
+  width: auto;
+  opacity: 0.5;
+}
+.card-footer-text {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #b0b0b0;
+}
+
+/* RIGHT PANEL */
+.card-right {
+  flex: 1;
+  padding: 36px 40px 28px 36px;
+  display: flex;
+  flex-direction: column;
+}
+.card-chart-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+.card-chart-sub {
+  font-size: 11px;
+  color: #747474;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+.card-chart-wrap {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+}
+.card-chart-src {
+  font-size: 10px;
+  color: #c0c0c0;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #e9e9e9;
+}
+.card-chart-src strong { color: #b0b0b0; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<p class="page-note">Open in Chrome · Screenshot each card at 1200 × 628 px · Scroll between cards</p>
+
+<!-- LOGO BASE64 (black) -->
+<svg id="zeal-logo-def" style="display:none">
+  <symbol id="zeal" viewBox="0 0 632 153">
+    <path d="M247.395 150.428V132.404L318.644 21.7131H248.031V1.99242H345.574V20.0167L274.113 130.707H346.21V150.428H247.395Z" fill="black"/>
+    <path d="M410.187 152.972C399.726 152.972 390.466 150.64 382.408 145.975C374.492 141.31 368.272 134.877 363.748 126.678C359.224 118.338 356.962 108.654 356.962 97.6273C356.962 86.3179 359.154 76.4929 363.536 68.1522C368.06 59.6702 374.351 53.026 382.408 48.2195C390.466 43.413 399.797 41.0097 410.399 41.0097C420.86 41.0097 429.908 43.3423 437.542 48.0074C445.175 52.6725 451.042 58.8927 455.142 66.6679C459.383 74.4431 461.503 83.0665 461.503 92.5381C461.503 93.9517 461.433 95.5068 461.291 97.2032C461.291 98.8996 461.221 100.667 461.079 102.504H373.926V86.8127H438.178C437.754 78.6134 434.926 72.1812 429.696 67.5161C424.465 62.7096 417.962 60.3064 410.187 60.3064C404.674 60.3064 399.585 61.5787 394.919 64.1233C390.396 66.5265 386.72 70.202 383.893 75.1499C381.207 79.9564 379.864 86.1059 379.864 93.5983V99.5357C379.864 106.887 381.207 113.107 383.893 118.196C386.579 123.285 390.184 127.173 394.707 129.859C399.373 132.404 404.462 133.676 409.975 133.676C416.337 133.676 421.567 132.333 425.667 129.647C429.908 126.82 433.018 123.073 434.997 118.408H458.535C456.556 124.911 453.304 130.778 448.78 136.008C444.398 141.239 438.955 145.409 432.452 148.519C425.95 151.488 418.528 152.972 410.187 152.972Z" fill="black"/>
+    <path d="M528.079 152.972C518.042 152.972 509.136 150.569 501.361 145.763C493.727 140.956 487.719 134.312 483.336 125.83C478.954 117.348 476.763 107.735 476.763 96.9911C476.763 86.1058 478.954 76.4929 483.336 68.1522C487.719 59.8116 493.797 53.238 501.573 48.4315C509.489 43.4837 518.466 41.0097 528.503 41.0097C536.702 41.0097 543.841 42.6355 549.92 45.8869C556.14 49.1384 561.018 53.6621 564.552 59.4582L566.248 43.5544H587.877V150.428H566.248L564.764 134.312C561.371 139.26 556.706 143.642 550.768 147.459C544.831 151.135 537.268 152.972 528.079 152.972ZM532.532 132.616C538.894 132.616 544.478 131.131 549.284 128.163C554.232 125.194 558.049 121.024 560.735 115.652C563.421 110.28 564.764 104.059 564.764 96.9911C564.764 89.9228 563.421 83.7026 560.735 78.3307C558.049 72.9587 554.232 68.7884 549.284 65.8197C544.478 62.851 538.894 61.3666 532.532 61.3666C526.453 61.3666 520.94 62.851 515.992 65.8197C511.186 68.7884 507.369 72.9587 504.541 78.3307C501.855 83.7026 500.512 89.9228 500.512 96.9911C500.512 104.059 501.855 110.28 504.541 115.652C507.369 121.024 511.186 125.194 515.992 128.163C520.94 131.131 526.453 132.616 532.532 132.616Z" fill="black"/>
+    <path d="M608.682 150.428V0.855835H632.008V150.428H608.682Z" fill="black"/>
+    <path d="M0 23.2063H84.8202C96.5314 23.2063 106.025 13.7125 106.025 2.00129H0V23.2063Z" fill="black"/>
+    <path d="M148.435 129.232H63.6152C51.9039 129.232 42.4101 138.725 42.4101 150.437H148.435V129.232Z" fill="black"/>
+    <path d="M84.8202 44.4101H0V65.6152H84.8202C119.968 65.6152 148.435 37.1484 148.435 2H127.23C127.23 25.4329 108.252 44.4114 84.8202 44.4101Z" fill="black"/>
+    <path d="M63.6152 108.025H148.435V86.8202H63.6152C28.4678 86.8202 0 115.287 0 150.435H21.2051C21.2051 127.003 40.1836 108.024 63.6152 108.025Z" fill="black"/>
+  </symbol>
+</svg>
+
+<!-- ═══ CARD 1 — ONBOARDING ═══ -->
+<div class="card green" id="card-onboarding">
+  <div class="card-left accent-green">
+    <div class="card-eyebrow">01 — Onboarding</div>
+    <div class="card-stat">~10<span class="unit">days</span></div>
+    <div class="card-stat-label">Median time from signup to first shift</div>
+    <div class="card-hook">Activation doesn't happen at signup — it happens at the first shift. Every extra day in between raises the drop-off risk.<br><br>Top platforms in our dataset get workers to their first shift in under 9 days.</div>
+    <div class="card-footer">
+      <svg height="16" viewBox="0 0 632 153"><use href="#zeal"/></svg>
+      <div class="card-footer-text">2026 State of Workforce Platforms</div>
+    </div>
+  </div>
+  <div class="card-right">
+    <div class="card-chart-title">Employee Onboarding Completion Rate by Month</div>
+    <div class="card-chart-sub">Full-year 2025 · Zeal platform dataset</div>
+    <div class="card-chart-wrap">
+      <canvas id="sc1"></canvas>
+    </div>
+    <div class="card-chart-src"><strong>Source:</strong> Zeal Platform Data, 2025 · W2 employee cohorts</div>
+  </div>
+</div>
+
+<!-- ═══ CARD 2 — PAYMENTS ═══ -->
+<div class="card blue" id="card-payments">
+  <div class="card-left accent-blue">
+    <div class="card-eyebrow">02 — Payments</div>
+    <div class="card-stat">96–115<span class="unit">hrs</span></div>
+    <div class="card-stat-label">Time from shift end to funds available</div>
+    <div class="card-hook">Pay speed varies by nearly 3 weeks across platforms in our dataset. Workers check balances frequently — and tolerance for delays is low.<br><br>The fastest platforms deliver funds the same day.</div>
+    <div class="card-footer">
+      <svg height="16" viewBox="0 0 632 153"><use href="#zeal"/></svg>
+      <div class="card-footer-text">2026 State of Workforce Platforms</div>
+    </div>
+  </div>
+  <div class="card-right">
+    <div class="card-chart-title">Median Hours: Shift End → Funds Available</div>
+    <div class="card-chart-sub">Monthly dataset median · Full-year 2025</div>
+    <div class="card-chart-wrap">
+      <canvas id="sc2"></canvas>
+    </div>
+    <div class="card-chart-src"><strong>Source:</strong> Zeal Platform Data, 2025 · W2 employee cohorts</div>
+  </div>
+</div>
+
+<!-- ═══ CARD 3 — RETENTION ═══ -->
+<div class="card coral" id="card-retention">
+  <div class="card-left accent-coral">
+    <div class="card-eyebrow">03 — Retention</div>
+    <div class="card-stat">17–28<span class="unit">%</span></div>
+    <div class="card-stat-label">Workers who don't return after their first shift</div>
+    <div class="card-hook">Between 1 in 6 and 1 in 4 workers complete a first shift and never come back. Each one represents re-acquisition cost and lost supply.<br><br>The second shift is the real retention signal.</div>
+    <div class="card-footer">
+      <svg height="16" viewBox="0 0 632 153"><use href="#zeal"/></svg>
+      <div class="card-footer-text">2026 State of Workforce Platforms</div>
+    </div>
+  </div>
+  <div class="card-right">
+    <div class="card-chart-title">One-and-Done Rate by Cohort — 2025</div>
+    <div class="card-chart-sub">% of workers who completed exactly one shift and did not return</div>
+    <div class="card-chart-wrap">
+      <canvas id="sc3"></canvas>
+    </div>
+    <div class="card-chart-src"><strong>Source:</strong> Zeal Platform Data, 2025 · W2 employee cohorts · Jan–Sep</div>
+  </div>
+</div>
+
+<!-- ═══ CARD 4 — WAGES ═══ -->
+<div class="card green" id="card-wages">
+  <div class="card-left accent-green">
+    <div class="card-eyebrow">04 — Wages</div>
+    <div class="card-stat">~$9<span class="unit">/hr</span></div>
+    <div class="card-stat-label">Spread from lowest to highest wage state</div>
+    <div class="card-hook">Median base hourly wages range from $15–17 in lower-wage states to $24+ in Washington and Colorado — within the same dataset.<br><br>What counts as competitive pay depends entirely on where your workers are.</div>
+    <div class="card-footer">
+      <svg height="16" viewBox="0 0 632 153"><use href="#zeal"/></svg>
+      <div class="card-footer-text">2026 State of Workforce Platforms</div>
+    </div>
+  </div>
+  <div class="card-right">
+    <div class="card-chart-title">Median Base Hourly Wage by State — Full-Year 2025 Average</div>
+    <div class="card-chart-sub">W2 employees only · Base pay · Overtime excluded · States with sufficient volume</div>
+    <div class="card-chart-wrap">
+      <canvas id="sc4"></canvas>
+    </div>
+    <div class="card-chart-src"><strong>Source:</strong> Zeal Platform Data, 2025 · W2 employee cohorts</div>
+  </div>
+</div>
+
+<!-- ═══ CARD 5 — SEASONALITY ═══ -->
+<div class="card coral" id="card-seasonality">
+  <div class="card-left accent-coral">
+    <div class="card-eyebrow">05 — Seasonality</div>
+    <div class="card-stat">34<span class="unit">%</span></div>
+    <div class="card-stat-label">Swing between peak and trough worker utilization</div>
+    <div class="card-hook">Shifts per active worker range from 5.6 to 7.5 across the year. That's nearly a 34% difference in utilization between the busiest and slowest months.<br><br>Platforms that plan for it outperform those that don't.</div>
+    <div class="card-footer">
+      <svg height="16" viewBox="0 0 632 153"><use href="#zeal"/></svg>
+      <div class="card-footer-text">2026 State of Workforce Platforms</div>
+    </div>
+  </div>
+  <div class="card-right">
+    <div class="card-chart-title">Shifts per Active Worker — Monthly Benchmark</div>
+    <div class="card-chart-sub">Holding platform size constant · Full-year 2025</div>
+    <div class="card-chart-wrap">
+      <canvas id="sc5"></canvas>
+    </div>
+    <div class="card-chart-src"><strong>Source:</strong> Zeal Platform Data, 2025 · W2 employee cohorts</div>
+  </div>
+</div>
+
+<script>
+const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function mkCard(id, config) {
+  const el = document.getElementById(id);
+  if (el) new Chart(el, config);
+}
+
+// Card 1: Onboarding completion
+mkCard('sc1', {
+  type: 'bar',
+  data: {
+    labels: MO,
+    datasets: [{
+      data: [38,35,42,25,40,43,45,41,38,36,33,30],
+      backgroundColor: MO.map((_,i) => i === 6 ? '#31834c' : 'rgba(49,131,76,0.55)'),
+      borderRadius: 6,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` ${c.raw}% completion rate` } }
+    },
+    scales: {
+      x: { grid: { display: false }, border: { display: false }, ticks: { color: '#747474', font: { size: 12, weight: '600' } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, border: { display: false }, ticks: { color: '#747474', callback: v => v + '%' }, max: 60, min: 0 }
+    },
+    animation: { duration: 1000, delay: c => c.dataIndex * 50 }
+  }
+});
+
+// Card 2: Pay speed
+mkCard('sc2', {
+  type: 'line',
+  data: {
+    labels: MO,
+    datasets: [{
+      data: [107.3,99.4,92.5,92.1,97.3,90,112.9,115.3,96.9,116.2,113.4,115.1],
+      borderColor: '#618ef0',
+      backgroundColor: 'rgba(97,142,240,0.1)',
+      borderWidth: 2.5,
+      fill: true,
+      tension: 0.4,
+      pointRadius: 5,
+      pointBackgroundColor: [107.3,99.4,92.5,92.1,97.3,90,112.9,115.3,96.9,116.2,113.4,115.1].map(v => v > 110 ? '#ef6646' : '#618ef0'),
+      pointBorderColor: 'white',
+      pointBorderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` ${c.raw} hrs` } }
+    },
+    scales: {
+      x: { grid: { display: false }, border: { display: false }, ticks: { color: '#747474', font: { size: 12, weight: '600' } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, border: { display: false }, ticks: { color: '#747474', callback: v => v + 'h' }, min: 80, max: 130 }
+    },
+    animation: { duration: 1200 }
+  }
+});
+
+// Card 3: One-and-done
+mkCard('sc3', {
+  type: 'bar',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],
+    datasets: [{
+      data: [10.3,17.6,19.3,21.4,22.9,20.9,21.0,24.4,27.9],
+      backgroundColor: [10.3,17.6,19.3,21.4,22.9,20.9,21.0,24.4,27.9].map(v => v > 22 ? 'rgba(239,102,70,0.9)' : 'rgba(239,102,70,0.55)'),
+      borderRadius: 6,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` ${c.raw}% didn't return` } }
+    },
+    scales: {
+      x: { grid: { display: false }, border: { display: false }, ticks: { color: '#747474', font: { size: 13, weight: '600' } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, border: { display: false }, ticks: { color: '#747474', callback: v => v + '%' }, max: 35, min: 0 }
+    },
+    animation: { duration: 1000, delay: c => c.dataIndex * 80 }
+  }
+});
+
+// Card 4: Wages by state
+mkCard('sc4', {
+  type: 'bar',
+  data: {
+    labels: ['WA','CO','CA','NY','IL','AZ','OH','PA','FL','TX','IN'],
+    datasets: [{
+      data: [24.28,23.27,22.59,21.74,21.09,19.94,19.62,19.41,17.57,17.09,15.87],
+      backgroundColor: [
+        '#31834ccc','#31834ccc','#31834ccc',
+        '#618ef0cc','#618ef0cc','#618ef0cc','#618ef0cc','#618ef0cc',
+        '#ef6646cc','#ef6646cc','#ef6646cc'
+      ],
+      borderRadius: 5,
+      borderSkipped: false,
+      barThickness: 28
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` $${c.raw}/hr` } }
+    },
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,0.05)' }, border: { display: false }, ticks: { color: '#747474', callback: v => '$' + v }, min: 13, max: 27 },
+      y: { grid: { display: false }, border: { display: false }, ticks: { color: '#333', font: { size: 12, weight: '700' } } }
+    },
+    animation: { duration: 1100, delay: c => c.dataIndex * 50 }
+  }
+});
+
+// Card 5: Seasonality / shifts per worker
+mkCard('sc5', {
+  type: 'line',
+  data: {
+    labels: MO,
+    datasets: [{
+      data: [6.9,7.0,6.7,7.1,7.5,7.2,6.4,5.8,5.6,5.9,5.7,6.2],
+      borderColor: '#ef6646',
+      backgroundColor: 'rgba(239,102,70,0.08)',
+      borderWidth: 2.5,
+      fill: true,
+      tension: 0.4,
+      pointRadius: 5,
+      pointBackgroundColor: [6.9,7.0,6.7,7.1,7.5,7.2,6.4,5.8,5.6,5.9,5.7,6.2].map(v =>
+        v === 7.5 ? '#31834c' : v === 5.6 ? '#618ef0' : '#ef6646'
+      ),
+      pointBorderColor: 'white',
+      pointBorderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` ${c.raw} shifts/worker` } }
+    },
+    scales: {
+      x: { grid: { display: false }, border: { display: false }, ticks: { color: '#747474', font: { size: 12, weight: '600' } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, border: { display: false }, ticks: { color: '#747474', callback: v => v + '×' }, min: 4, max: 9 }
+    },
+    animation: { duration: 1200 }
+  }
+});
+</script>
+</body>
+</html>
