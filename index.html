@@ -237,12 +237,20 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .sc-label { font-size: 13px; color: var(--z-muted); line-height: 1.5; }
 .sc-label strong { display: block; font-size: 14px; font-weight: 700; color: var(--z-dark); margin-bottom: 3px; }
 
-/* Sub-section label */
-.subsection-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--z-muted); margin: 48px 0 20px; padding-bottom: 10px;
-  border-bottom: 1px solid var(--z-border);
+/* Toggle */
+.toggle {
+  display: flex; align-items: center; gap: 0;
+  background: var(--z-cream); border-radius: 10px; padding: 4px;
+  width: fit-content; margin: 0 auto 44px; border: 1px solid var(--z-border);
 }
+.toggle-btn {
+  font-size: 13px; font-weight: 600; padding: 8px 20px;
+  border-radius: 7px; border: none; cursor: pointer;
+  background: transparent; color: var(--z-muted);
+  transition: background 0.2s, color 0.2s;
+}
+.toggle-btn.active { background: white; color: var(--z-dark); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.toggle-btn.active[style] { color: var(--z-dark) !important; }
 
 /* Chart cards */
 .chart-card {
@@ -646,8 +654,12 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
     </div>
   </div>
 
-  <!-- Employee -->
-  <div class="subsection-label">Employee</div>
+  <div class="toggle reveal in" id="tog1">
+    <button class="toggle-btn active" onclick="sw(&#39;w2ob&#39;,&#39;c1ob&#39;,this,document.getElementById(&#39;tog1&#39;))">Employee</button>
+    <button class="toggle-btn" onclick="sw(&#39;c1ob&#39;,&#39;w2ob&#39;,this,document.getElementById(&#39;tog1&#39;))">Contractor</button>
+  </div>
+
+  <!-- W2 -->
   <div id="w2ob">
     <div class="stat-strip reveal in">
       <div class="stat-cell"><div class="sc-val" style="color:var(--z-green)"><span class="counter" data-t="34" data-s="%" data-done="1">34%</span></div><div class="sc-label"><strong>Avg Completion Rate</strong>Across all 2025 cohorts</div></div>
@@ -662,8 +674,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   </div>
 
   <!-- Contractor -->
-  <div class="subsection-label">Contractor</div>
-  <div id="c1ob">
+  <div id="c1ob" style="display:none">
     <div class="cmp-grid reveal">
       <div class="cmp-card w2">
         <div class="cmp-badge">Employee</div>
@@ -750,8 +761,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
       <div class="stat-cell"><div class="sc-val" style="color:var(--z-blue)">~44<span style="font-size:0.45em">%</span></div><div class="sc-label"><strong>Monthly Pay Workers</strong>Most common cadence in our dataset — while ~1 in 5 workers expect weekly pay</div></div>
       <div class="stat-cell"><div class="sc-val" style="color:var(--z-purple)">96–115<span style="font-size:0.45em">hrs</span></div><div class="sc-label"><strong>Time to Pay — Dataset Range</strong>Fastest platforms: near-instant to same-day. Slower platforms: multiple days</div></div>
     </div>
-    <!-- Employee Pay Speed & Frequency -->
-    <div class="subsection-label">Employee Pay Speed &amp; Frequency</div>
+    <div class="toggle reveal in" id="tog2">
+      <button class="toggle-btn active" onclick="sw(&#39;w2pay&#39;,&#39;c1pay&#39;,this,document.getElementById(&#39;tog2&#39;))">Employee Pay Speed &amp; Frequency</button>
+      <button class="toggle-btn" onclick="sw(&#39;c1pay&#39;,&#39;w2pay&#39;,this,document.getElementById(&#39;tog2&#39;))">Contractor Pay Methods</button>
+    </div>
     <div id="w2pay">
       <div class="grid-2 reveal in">
         <div class="chart-card">
@@ -766,9 +779,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
         </div>
       </div>
     </div>
-    <!-- Contractor Pay Methods -->
-    <div class="subsection-label">Contractor Pay Methods</div>
-    <div id="c1pay">
+    <div id="c1pay" style="display:none">
       <div class="chart-card reveal">
         <div class="chart-title">Contractor Pay Method Mix — Disbursement Rail Breakdown</div>
         <div class="chart-sub">Distribution of payout methods in our dataset — ACH vs. paycard. Method choice reflects worker preference, not payment speed.</div>
@@ -1084,6 +1095,13 @@ document.querySelectorAll('[data-count]').forEach(el=>{
 const robs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.querySelectorAll('.ring-fg').forEach(r=>{const v=+r.dataset.v,c=2*Math.PI*50,off=c-(v/100)*c;setTimeout(()=>r.style.strokeDashoffset=off,200);});}),{threshold:0.3});
 document.querySelectorAll('.ring-grid').forEach(el=>robs.observe(el));
 
+// TOGGLE
+function sw(show,hide,btn,wrap){
+  document.getElementById(show).style.display='block';
+  document.getElementById(hide).style.display='none';
+  wrap.querySelectorAll('.toggle-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
 
 // CHARTS
 const MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
