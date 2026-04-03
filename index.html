@@ -386,19 +386,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .reveal.in { opacity: 1; transform: translateY(0); }
 .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.32s} .d4{transition-delay:.44s}
 
-/* Section progress nav */
-.progress-nav {
-  position: fixed; right: 28px; top: 50%; transform: translateY(-50%);
-  display: flex; flex-direction: column; gap: 14px; z-index: 90;
-}
-.progress-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: rgba(0,0,0,0.15);
-  transition: background 0.3s var(--ease-expo), transform 0.3s var(--ease-expo);
-  cursor: pointer; text-decoration: none; display: block;
-}
-.progress-dot.active { background: var(--z-green); transform: scale(1.6); }
-.progress-dot:hover { background: var(--z-green); }
+
 
 /* Scroll cue */
 .scroll-cue {
@@ -1100,23 +1088,6 @@ window.addEventListener('scroll',()=>{
 const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
-// PROGRESS NAV
-const sections=['onboarding','payments','engagement','wages','growth'];
-const sectionLabels=['Onboarding','Payments','Retention','Wages','Seasonality'];
-const pNav=document.createElement('nav');
-pNav.className='progress-nav';
-pNav.innerHTML=sections.map((id,i)=>`<a class="progress-dot" href="#${id}" title="${sectionLabels[i]}"></a>`).join('');
-document.body.appendChild(pNav);
-const pDots=pNav.querySelectorAll('.progress-dot');
-const sEls=sections.map(id=>document.getElementById(id));
-function updateDots(){
-  const mid=scrollY+innerHeight*0.5;
-  let active=0;
-  sEls.forEach((el,i)=>{if(el&&el.getBoundingClientRect().top+scrollY<=mid)active=i;});
-  pDots.forEach((d,i)=>d.classList.toggle('active',i===active));
-}
-window.addEventListener('scroll',updateDots,{passive:true});
-updateDots();
 
 // SCROLL CUES — inject after each section-lead
 document.querySelectorAll('.section-lead').forEach(el=>{
