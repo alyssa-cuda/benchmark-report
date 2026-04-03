@@ -366,6 +366,18 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .july-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 6px; }
 .july-text { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
 
+/* Section hero stat — appears before heading */
+.section-hero-stat {
+  margin-bottom: 56px; padding-bottom: 56px;
+  border-bottom: 1px solid var(--z-border);
+}
+.shero-num {
+  display: block; font-size: clamp(88px, 15vw, 200px); font-weight: 900;
+  letter-spacing: -8px; line-height: 0.9; margin-bottom: 20px;
+}
+.shero-unit { font-size: 0.32em; font-weight: 700; letter-spacing: -3px; vertical-align: middle; }
+.shero-sub { font-size: 16px; font-weight: 500; color: var(--z-muted); letter-spacing: -0.3px; }
+
 /* Section bridge — narrative connective tissue */
 .section-bridge {
   background: #191919; padding: 80px 40px; text-align: center;
@@ -671,6 +683,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <!-- ═══ SECTION 1 — ONBOARDING ═══ -->
 <div class="section-band band-green" id="onboarding">Section 01 — Onboarding &amp; Activation</div>
 <div class="section-wrap">
+  <div class="section-hero-stat reveal">
+    <span class="shero-num" style="color:var(--z-green)">~<span class="counter" data-t="10" data-s="">10</span><span class="shero-unit"> days</span></span>
+    <div class="shero-sub">median time from signup to first shift</div>
+  </div>
   <div class="eyebrow reveal in">Onboarding &amp; Activation</div>
   <h2 class="section-h2 reveal in">The first shift is the biggest drop-off point</h2>
   <p class="section-lead reveal in">Time to first shift varies meaningfully across platforms. That gap determines how quickly workers activate and whether they ever come back.</p>
@@ -784,6 +800,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-band band-blue" id="payments">Section 02 — Payments</div>
 <div class="section-dark">
   <div class="section-dark-inner">
+    <div class="section-hero-stat reveal">
+      <span class="shero-num" style="color:var(--z-blue)"><span class="counter" data-t="96">96</span>–<span class="counter" data-t="115">115</span><span class="shero-unit"> hrs</span></span>
+      <div class="shero-sub">time from shift end to funds available</div>
+    </div>
     <div class="eyebrow reveal in">Payments</div>
     <h2 class="section-h2 reveal in">Pay is where trust is won — or lost</h2>
     <p class="section-lead reveal in">Payment frequency varies widely across platforms — from instant payouts to weekly payrolls. Pay speed, frequency, and accuracy directly impacts worker trust and retention.</p>
@@ -864,6 +884,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <!-- ═══ SECTION 3 — ENGAGEMENT ═══ -->
 <div class="section-band band-purple" id="engagement">Section 03 — Worker Engagement</div>
 <div class="section-wrap">
+  <div class="section-hero-stat reveal">
+    <span class="shero-num" style="color:var(--z-coral)"><span class="counter" data-t="17">17</span>–<span class="counter" data-t="28">28</span><span class="shero-unit">%</span></span>
+    <div class="shero-sub">of workers don't return after their first shift</div>
+  </div>
   <div class="eyebrow purple reveal">Worker Engagement</div>
   <h2 class="section-h2 reveal">Retention looks strong — until you look closer</h2>
   <p class="section-lead reveal">In our dataset, most workers return after their first shift. The real question is how many don't and what that drop-off costs.</p>
@@ -927,6 +951,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <!-- ═══ SECTION 4 — WAGES ═══ -->
 <div class="section-band" id="wages">Section 04 — Wages / Pay Rates by State</div>
 <div class="section-wrap">
+  <div class="section-hero-stat reveal">
+    <span class="shero-num" style="color:var(--z-green)">~$<span class="counter" data-t="9">9</span><span class="shero-unit">/hr</span></span>
+    <div class="shero-sub">spread from lowest to highest wage state</div>
+  </div>
   <div class="eyebrow blue reveal">Wages &amp; Pay Rates</div>
   <h2 class="section-h2 reveal">Where you operate determines what workers cost</h2>
   <p class="section-lead reveal">In our dataset, median wages span nearly $15/hr from lowest to highest states. That gap shapes compliance, pay competitiveness, supply quality, and shift fill rates across every market you operate in.</p>
@@ -1037,6 +1065,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 <div class="section-band band-coral" id="growth">Section 05 — Seasonality &amp; Growth</div>
 <div class="section-dark">
   <div class="section-dark-inner">
+    <div class="section-hero-stat reveal">
+      <span class="shero-num" style="color:var(--z-coral)"><span class="counter" data-t="34">34</span><span class="shero-unit">%</span></span>
+      <div class="shero-sub">swing between peak and trough worker utilization</div>
+    </div>
     <div class="eyebrow reveal">Seasonality &amp; Growth</div>
     <h2 class="section-h2 reveal">Utilization swings are predictable. Most platforms underplan for them.</h2>
     <p class="section-lead reveal">In our dataset, shifts per active worker range from 5.6 to 7.5 across the year — a 34% swing. That variation has direct implications for staffing capacity, onboarding timing, and payment volume.</p>
@@ -1139,7 +1171,7 @@ function runCounter(el){
   const t=parseInt(el.dataset.t),s=el.dataset.s||'',dur=1600,start=performance.now();
   (function u(now){const p=Math.min((now-start)/dur,1),ease=1-Math.pow(1-p,4);el.textContent=Math.round(ease*t)+s;if(p<1)requestAnimationFrame(u);})(performance.now());
 }
-const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.done){e.target.dataset.done=1;runCounter(e.target);}}),{threshold:0.5});
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.done){e.target.dataset.done=1;runCounter(e.target);}}),{threshold:0.2});
 document.querySelectorAll('.counter').forEach(el=>co.observe(el));
 document.querySelectorAll('[data-count]').forEach(el=>{
   const t=parseInt(el.dataset.count),dur=2000,ob=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!el.dataset.done){el.dataset.done=1;const s=performance.now();(function u(n){const p=Math.min((n-s)/dur,1),e=1-Math.pow(1-p,4);el.textContent=Math.round(e*t);if(p<1)requestAnimationFrame(u);else el.textContent=t+'%';})(performance.now());}},{threshold:0.5});ob.observe(el);
