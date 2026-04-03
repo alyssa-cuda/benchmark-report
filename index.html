@@ -196,7 +196,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .ch-desc { font-size: 12px; color: var(--z-muted); line-height: 1.6; }
 
 /* ── SHARED SECTION STYLES ───────────────────────────── */
-.section-wrap { padding: 80px 40px; max-width: 1208px; margin: 0 auto; }
+.section-wrap { padding: 120px 40px; max-width: 1208px; margin: 0 auto; }
 .section-band {
   padding: 12px 40px; text-align: center;
   font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
@@ -221,10 +221,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .eyebrow.coral::before { background: var(--z-coral); }
 
 .section-h2 {
-  font-size: clamp(30px, 4vw, 50px); font-weight: 600; letter-spacing: -2.5px;
-  color: #333; line-height: 1.05; margin-bottom: 18px;
+  font-size: clamp(48px, 7vw, 96px); font-weight: 700; letter-spacing: -4px;
+  color: #333; line-height: 1.02; margin-bottom: 28px;
 }
-.section-lead { font-size: 16px; color: var(--z-muted); line-height: 1.7; max-width: 640px; margin-bottom: 56px; }
+.section-lead { font-size: 20px; color: var(--z-muted); line-height: 1.65; max-width: 760px; margin-bottom: 88px; }
 
 /* Stat strip */
 .stat-strip {
@@ -233,7 +233,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 }
 .stat-cell { background: white; padding: 36px 28px; text-align: center; transition: background 0.2s; }
 .stat-cell:hover { background: var(--z-green-pale); }
-.sc-val { font-size: clamp(38px,5vw,58px); font-weight: 600; letter-spacing: -2.5px; line-height: 1; margin-bottom: 8px; }
+.sc-val { font-size: clamp(64px,9vw,110px); font-weight: 700; letter-spacing: -4px; line-height: 1; margin-bottom: 8px; }
 .sc-label { font-size: 13px; color: var(--z-muted); line-height: 1.5; }
 .sc-label strong { display: block; font-size: 14px; font-weight: 700; color: var(--z-dark); margin-bottom: 3px; }
 
@@ -270,8 +270,8 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .finding-2up.flip { direction: rtl; }
 .finding-2up.flip > * { direction: ltr; }
 .finding-big-num {
-  font-size: clamp(72px, 12vw, 140px); font-weight: 800;
-  letter-spacing: -3px; line-height: 0.9;
+  font-size: clamp(100px, 16vw, 200px); font-weight: 900;
+  letter-spacing: -6px; line-height: 0.88;
 }
 .finding-big-num.green { color: var(--z-green); }
 .finding-big-num.blue { color: var(--z-blue); }
@@ -287,7 +287,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .pill-both { background: rgba(150,120,225,0.1); color: var(--z-purple); }
 
 /* Dark section — now light, same as section-wrap */
-.section-dark { background: white; padding: 80px 40px; position: relative; overflow: hidden; }
+.section-dark { background: white; padding: 120px 40px; position: relative; overflow: hidden; }
 .section-dark-inner { max-width: 1208px; margin: 0 auto; }
 .section-dark::before { display: none; }
 .section-dark .eyebrow { color: var(--z-green); }
@@ -382,9 +382,34 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
 .footer-bar-text { font-size: 11px; color: var(--z-muted); }
 
 /* Reveal animation */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease-expo), transform 0.75s var(--ease-expo); }
+.reveal { opacity: 0; transform: translateY(56px); transition: opacity 1.1s var(--ease-expo), transform 1.1s var(--ease-expo); }
 .reveal.in { opacity: 1; transform: translateY(0); }
-.d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s}
+.d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.32s} .d4{transition-delay:.44s}
+
+/* Section progress nav */
+.progress-nav {
+  position: fixed; right: 28px; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 14px; z-index: 90;
+}
+.progress-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(0,0,0,0.15);
+  transition: background 0.3s var(--ease-expo), transform 0.3s var(--ease-expo);
+  cursor: pointer; text-decoration: none; display: block;
+}
+.progress-dot.active { background: var(--z-green); transform: scale(1.6); }
+.progress-dot:hover { background: var(--z-green); }
+
+/* Scroll cue */
+.scroll-cue {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(0,0,0,0.2); margin-top: -56px; margin-bottom: 80px;
+  animation: cue-bob 2.5s ease-in-out infinite;
+}
+.scroll-cue::before { content: '↓'; font-size: 14px; }
+@keyframes cue-bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+@media(max-width:900px){ .progress-nav{display:none} }
 
 .divider { height: 1px; background: var(--z-rule); margin: 72px 0; }
 
@@ -451,14 +476,17 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(46,110,67,0.08); }
   margin-top: 4px;
   letter-spacing: 0.02em;
 }
-/* Section bands — green dividers */
+/* Section bands — chapter break dividers */
 .section-band {
-  padding: 11px 40px; text-align: center;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 28px 40px; text-align: center;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
   color: white;
   background: var(--z-green);
 }
-.band-green, .band-blue, .band-purple, .band-coral { background: var(--z-green); color: white; }
+.band-green  { background: var(--z-green); }
+.band-blue   { background: var(--z-blue); }
+.band-purple { background: var(--z-purple); }
+.band-coral  { background: var(--z-coral); }
 
 /* Dark-section industry-ctx (now light, inherits defaults) */
 .section-dark .industry-ctx { background: #f9faf8; border-color: var(--z-border); }
@@ -1069,8 +1097,34 @@ window.addEventListener('scroll',()=>{
 });
 
 // REVEAL
-const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// PROGRESS NAV
+const sections=['onboarding','payments','engagement','wages','growth'];
+const sectionLabels=['Onboarding','Payments','Retention','Wages','Seasonality'];
+const pNav=document.createElement('nav');
+pNav.className='progress-nav';
+pNav.innerHTML=sections.map((id,i)=>`<a class="progress-dot" href="#${id}" title="${sectionLabels[i]}"></a>`).join('');
+document.body.appendChild(pNav);
+const pDots=pNav.querySelectorAll('.progress-dot');
+const sEls=sections.map(id=>document.getElementById(id));
+function updateDots(){
+  const mid=scrollY+innerHeight*0.5;
+  let active=0;
+  sEls.forEach((el,i)=>{if(el&&el.getBoundingClientRect().top+scrollY<=mid)active=i;});
+  pDots.forEach((d,i)=>d.classList.toggle('active',i===active));
+}
+window.addEventListener('scroll',updateDots,{passive:true});
+updateDots();
+
+// SCROLL CUES — inject after each section-lead
+document.querySelectorAll('.section-lead').forEach(el=>{
+  const cue=document.createElement('div');
+  cue.className='scroll-cue reveal';
+  cue.textContent='scroll to explore';
+  el.after(cue);
+});
 
 // COUNTERS
 function runCounter(el){
